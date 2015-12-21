@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.WxMemberRelation"> 
+	
+	<insert id="addMemberToWx" parameterType="WxMemberRelation">
+		insert into 
+			wx_member_relation(
+				id,
+				openid,
+				membercode,
+				createtime,
+				remark1,
+				remark2
+			)values(
+				#{id},
+				#{openid},
+				#{membercode},
+				#{createtime},
+				#{remark1},
+				#{remark2}
+			)
+	</insert>
+	
+	<select id="selectMaxId" resultType="long">
+			SELECT 
+				max(id)
+			FROM wx_member_relation 
+	</select>
+	
+	<select id="getMemberToWxByOpenId" parameterType="hashmap" resultType="WxMemberRelation">
+		SELECT 
+				*
+			FROM wx_member_relation 
+		where openid = #{openId}
+	</select>
+	
+	<delete id="removRelation" parameterType="hashmap">
+	    DELETE FROM wx_member_relation
+	    where openid = #{openId}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.Article"> 
+	
+	<sql id="pagesql">
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</sql>
+	
+	<insert id="insert" parameterType="Article">
+		insert into 
+			article(
+				article_id,
+				article_title,
+				article_content,
+				create_time,
+				cteate_name
+			)values(
+				#{article_id},
+				#{article_title},
+				#{article_content},
+				#{create_time},
+				#{cteate_name}
+			)
+	</insert>
+	
+	<select id="selectMaxId" resultType="long">
+			SELECT 
+				max(article_id)
+			FROM article 
+	</select>
+	
+	<update id="updateArticle" parameterType="Article">
+		update 
+			article
+		<set>
+			<if test="null != article_title">
+				article_title=#{article_title},
+			</if>
+			<if test="null != article_content">
+				article_content=#{article_content},
+			</if>
+			<if test="null != create_time">
+				create_time=#{create_time},
+			</if>
+			<if test="null != cteate_name">
+				cteate_name=#{cteate_name}
+			</if>
+		</set>	
+			where
+			article_id=#{article_id}
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		delete 
+			from article
+		where
+			article_id=#{article_id}
+	</delete>
+	
+	<select id="selectArticle" parameterType="hashmap" resultType="Article">
+			SELECT 
+				*
+			FROM article 
+			where
+			article_id=#{article_id}
+	</select>
+	
+	<select id="selectArticles" resultType="Article">
+			SELECT 
+				*
+			FROM article 
+			order by article_id
+	</select>
+	
+</mapper>

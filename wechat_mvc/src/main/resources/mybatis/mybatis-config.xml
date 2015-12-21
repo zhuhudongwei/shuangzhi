@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<typeAliases>
+    <package name="com.wechat.model"/>
+</typeAliases>
+<mappers>
+	<mapper resource="com/wechat/xml/Operator-mybatis-mysql.xml"/> 
+	<mapper resource="com/wechat/xml/OrderDetail-mybatis-mysql.xml"/> 
+	<mapper resource="com/wechat/xml/Orderhead-mybatis-mysql.xml"/> 
+	<mapper resource="com/wechat/xml/Supplier-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/Customer-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/Appsubmit-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/Source-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/DcInfo-mybatis-mysql.xml"/>
+	
+	<mapper resource="com/wechat/xml/WechatCustomer-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/WechatCustomerResponse-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/Article-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/Driver-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/Joinorder-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/AppsubmitDeatil-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/Truck-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/DriverTruck-mybatis-mysql.xml"/>
+	<mapper resource="com/wechat/xml/Sms-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/WxMemberRelation-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/Area-mybatis-mysql.xml" />
+	<mapper resource="com/wechat/xml/Line-mybatis-mysql.xml" />
+</mappers>    
+</configuration>

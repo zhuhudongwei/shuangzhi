@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.WechatCustomer"> 
+	
+	<sql id="pagesql">
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</sql>
+	
+	<insert id="wechatCustomerinsert" parameterType="WechatCustomer">
+		insert into 
+			wc_customer(
+				customer_id,
+				open_id,
+				create_time,
+				content,
+				isResponse,
+				open_name
+			)values(
+				#{customer_id},
+				#{open_id},
+				#{create_time},
+				#{content},
+				#{isResponse},
+				#{open_name}
+			)
+	</insert>
+	
+	<select id="selectMaxId" resultType="long">
+			SELECT 
+				max(customer_id)
+			FROM wc_customer 
+	</select>
+	
+	
+	<select id="selectWechatCustomerInfo" parameterType="hashmap" resultType="WechatCustomer">
+			SELECT 
+				*
+			FROM wc_customer
+			where 
+				customer_id = #{customer_id}
+	</select>
+	
+	<select id="selectWechatCustomerByOpenId_count" parameterType="hashmap" resultType="int">
+			SELECT 
+				count(customer_id)
+			FROM wc_customer 
+			<where>
+				<if test="open_id!=null and open_id!=''">
+					open_id = #{open_id}
+				</if>
+			</where>
+	</select>
+	<select id="selectWechatCustomerByOpenId" parameterType="hashmap" resultType="WechatCustomer">
+			SELECT 
+				*
+			FROM wc_customer 
+			<where>
+				<if test="open_id!=null and open_id!=''">
+					open_id = #{open_id}
+				</if>
+			</where>
+		order by create_time
+		<include refid="pagesql"/>
+	</select>
+	
+	<select id="selectWechatCustomerByOpenId2_count" parameterType="hashmap" resultType="int">
+			SELECT 
+				count(customer_id)
+			FROM wc_customer 
+			where 
+			isResponse = 0
+	</select>
+	<select id="selectWechatCustomerByOpenId2" parameterType="hashmap" resultType="WechatCustomer">
+			SELECT 
+				*
+			FROM wc_customer 
+			where 
+			isResponse = 0
+		<include refid="pagesql"/>
+	</select>
+	
+	<update id="updateWechatCustomerByState" parameterType="hashmap">
+		update 
+			wc_customer
+		<set>
+			<if test="null != isResponse">
+				isResponse = #{isResponse}
+			</if>
+		</set>	
+			where
+			customer_id=#{customer_id}
+	</update>
+	
+	<select id="listWechatCustomerByOpenId" parameterType="hashmap" resultType="WechatCustomer">
+			SELECT 
+				*
+			FROM wc_customer
+			where 
+				open_id = #{open_id}
+			ORDER BY create_time ASC
+	</select>
+	
+	<select id="listWechatCustomerHistory" parameterType="hashmap" resultType="WechatCustomer">
+			SELECT 
+				* 
+			FROM wc_customer 
+			GROUP BY open_id
+			ORDER BY customer_id
+	</select>
+	
+</mapper>

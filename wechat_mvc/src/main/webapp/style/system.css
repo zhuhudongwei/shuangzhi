@@ -1,0 +1,14 @@
+body {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+body {
+    background: none repeat scroll 0 0 #e2e9ea;
+    color: #666666;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+a{text-decoration:none; color:#444}
+a:hover{text-decoration:underline;}

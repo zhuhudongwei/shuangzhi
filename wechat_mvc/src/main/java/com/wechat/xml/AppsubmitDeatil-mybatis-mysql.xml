@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.AppsubmitDetail"> 
+
+	<select id="listAppsubmitDetail" parameterType="hashmap" resultType="AppsubmitDetail">
+		SELECT 
+			*
+		FROM sc_appsubmit
+		where
+			tel = #{tel }
+			and makedate &gt;= #{driverreceivedate}
+			and makedate &lt;= #{expectedTakeDeliveryTime}
+			and LNG !='0'
+			and LAT !='0'
+		order by makedate DESC
+	</select>
+	
+</mapper>

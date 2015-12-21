@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+    <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+    <bean id="configBean" 	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"	p:ignoreResourceNotFound="true">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:common/jdbc.properties</value>
+				<value>classpath:common/constants.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- mybatis -->
+	<!-- 定义数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<!-- Connection Info -->
+		
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+		<!-- Connection Pooling Info -->
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="100" />
+		<property name="maxIdle" value="30" />
+		<property name="maxWait" value="500" />
+		<property name="defaultAutoCommit" value="false" />
+	</bean>
+	
+	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+         <property name="configLocation" >
+            <value>classpath:mybatis/mybatis-config.xml</value>
+        </property> 
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">  
+      <constructor-arg index="0" ref="sqlSessionFactory" />  
+      <constructor-arg index="1" value="BATCH" />
+    </bean> 
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    
+    <aop:config>
+        <aop:pointcut id="serviceMethods"
+            expression="execution(* com.wechat.*.*.*Service.*(..))  
+			and !execution(* com.wechat.*.*.*Service.get*(..)) 
+			and !execution(* com.wechat.*.*.*Service.list*(..)) 
+			and !execution(* com.wechat.*.*.*Service.search*(..)) 
+			and !execution(* com.wechat.*.*.*Service.find*(..)) 
+			and !execution(* com.wechat.*.*.*Service.page*(..))
+			and !execution(* com.wechat.*.*.*Service.stat*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
+    </aop:config>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED" rollback-for="Throwable"/>
+        </tx:attributes>
+    </tx:advice>
+    <!-- ===============常量配置================= -->    
+     <bean class="com.wechat.utils.Constants">
+	    <property name="image_url" value="${image_url}" />
+	    <property name="file_root" value="${file_root}" />
+	 </bean>
+</beans>

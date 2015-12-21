@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.DriverTruck"> 
+	
+	<select id="listTruck" parameterType="hashmap" resultType="DriverTruck">
+		SELECT 
+			*
+		FROM CP_DRIVER_TRUCK 
+		where TEL = #{tel }
+		<if test="supplierno != null">
+		    and SUPPLIERNO = #{supplierno }
+		</if>
+	</select>
+
+</mapper>

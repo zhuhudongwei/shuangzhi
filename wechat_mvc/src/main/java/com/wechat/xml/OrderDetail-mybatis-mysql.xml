@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.OrderDetail"> 
+	
+	<insert id="insert_ORDERDETAIL_BAK" parameterType="hashmap">
+		INSERT INTO SC_ORDERDETAIL_BAK (ID,LOADINGNOTE,ORDERNO,CUSTOMERNO,CUSTOMERNAME,TRANSPORTATIONNO,TRANSPORTATION,PRODUCTNAME,
+		PRODUCTNO,PLANQUANTITY,BATCH,SOURCENAME,SOURCENO,TRANSMODE,SHIPDATE,ETA,DELIVERYNOTE,INSULATIONSTAYS,GROPID,CORPID,MAKER,
+		MAKEDATE,EDITDATE,UNIT,SFILENAME,DTLID,SUPPLIERNO,SUPPLIERNAME,LOADINDATE,LOADOUTDATE,UNLOADINDATE,UNLOADOUTDATE,LOADNUM,
+		SIGNNUM,DELIVERYADDRESS,UPDREASON,UPDDATE,UPDNAME,CHGTYPE)values(
+				#{id},#{loadingnote},#{orderno},#{customerno},#{customername},#{transportationno},#{transportation},#{productname},
+				#{productno},#{planquantity},#{batch},#{sourcename},#{sourceno},#{transmode},#{shipdate},#{eta},#{deliverynote},#{insulationstays},#{gropid},#{corpid},#{maker},
+				#{makedate},#{editdate},#{unit},#{sfilename},#{dtlid},#{supplierno},#{suppliername},#{loadindate},#{loadoutdate},#{unloadindate},#{unloadoutdate},#{loadnum},
+				#{signnum},#{deliveryaddress},#{updreason},#{upddate},#{updname},#{chgtype}
+			)
+	</insert>
+	
+	<insert id="insert_ORDERDETAIL" parameterType="hashmap">
+		INSERT INTO SC_ORDERDETAIL (ID,LOADINGNOTE,ORDERNO,CUSTOMERNO,CUSTOMERNAME,TRANSPORTATIONNO,TRANSPORTATION,PRODUCTNAME,PRODUCTNO,
+		PLANQUANTITY,BATCH,SOURCENAME,SOURCENO,TRANSMODE,SHIPDATE,ETA,DELIVERYNOTE,INSULATIONSTAYS,GROPID,CORPID,MAKER,
+		MAKEDATE,EDITDATE,UNIT,SFILENAME,DTLID,SUPPLIERNO,SUPPLIERNAME,LOADINDATE,LOADOUTDATE,UNLOADINDATE,UNLOADOUTDATE,LOADNUM,
+		SIGNNUM,DELIVERYADDRESS,UPDREASON,UPDDATE,UPDNAME)values(
+				#{id},#{loadingnote},#{orderno},#{customerno},#{customername},#{transportationno},#{transportation},#{productname},
+				#{productno},#{planquantity},#{batch},#{sourcename},#{sourceno},#{transmode},#{shipdate},#{eta},#{deliverynote},#{insulationstays},#{gropid},#{corpid},#{maker},
+				#{makedate},#{editdate},#{unit},#{sfilename},#{dtlid},#{supplierno},#{suppliername},#{loadindate},#{loadoutdate},#{unloadindate},#{unloadoutdate},#{loadnum},
+				#{signnum},#{deliveryaddress},#{updreason},#{upddate},#{updname}
+			)
+	</insert>
+	
+	<delete id="delOrderDetailBAK" parameterType="hashmap">
+		delete 
+			from SC_ORDERDETAIL_BAK
+		where
+			LOADINGNOTE = #{loadingnote}
+	</delete>
+	
+	<delete id="delOrderDetail" parameterType="hashmap">
+		delete 
+			from SC_ORDERDETAIL
+		where
+			LOADINGNOTE = #{loadingnote}
+	</delete>
+	
+	
+	<select id="selectOrderDetailById" parameterType="hashmap" resultType="OrderDetail">
+		SELECT 
+			*
+		FROM sc_orderdetail 
+		where loadingnote = #{id }
+	</select>
+	
+	<select id="selectOrderDetailBAKById" parameterType="hashmap" resultType="OrderDetail">
+		SELECT 
+			ID,LOADINGNOTE,ORDERNO,CUSTOMERNO,CUSTOMERNAME,TRANSPORTATIONNO,TRANSPORTATION,PRODUCTNAME,PRODUCTNO,
+		PLANQUANTITY,BATCH,SOURCENAME,SOURCENO,TRANSMODE,SHIPDATE,ETA,DELIVERYNOTE,INSULATIONSTAYS,GROPID,CORPID,MAKER,
+		MAKEDATE,EDITDATE,UNIT,SFILENAME,DTLID,SUPPLIERNO,SUPPLIERNAME,LOADINDATE,LOADOUTDATE,UNLOADINDATE,UNLOADOUTDATE,LOADNUM,
+		SIGNNUM,DELIVERYADDRESS,UPDREASON,UPDDATE,UPDNAME
+		FROM SC_ORDERDETAIL_BAK 
+		where ID = #{id }
+	</select>
+	
+	<select id="selectOrderDetailBAKByLoadingNote" parameterType="hashmap" resultType="OrderDetail">
+		SELECT 
+			ID,LOADINGNOTE,ORDERNO,CUSTOMERNO,CUSTOMERNAME,TRANSPORTATIONNO,TRANSPORTATION,PRODUCTNAME,PRODUCTNO,
+		PLANQUANTITY,BATCH,SOURCENAME,SOURCENO,TRANSMODE,SHIPDATE,ETA,DELIVERYNOTE,INSULATIONSTAYS,GROPID,CORPID,MAKER,
+		MAKEDATE,EDITDATE,UNIT,SFILENAME,DTLID,SUPPLIERNO,SUPPLIERNAME,LOADINDATE,LOADOUTDATE,UNLOADINDATE,UNLOADOUTDATE,LOADNUM,
+		SIGNNUM,DELIVERYADDRESS,UPDREASON,UPDDATE,UPDNAME
+		FROM SC_ORDERDETAIL_BAK 
+		where LOADINGNOTE = #{loadingNote }
+	</select>
+	
+	<select id="selectOrderDetailByheadId" parameterType="hashmap" resultType="OrderDetail">
+		SELECT 
+			*
+		FROM sc_orderdetail 
+		where id = #{id }
+	</select>
+</mapper>

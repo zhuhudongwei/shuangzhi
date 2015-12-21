@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.Operator"> 
+	
+	<select id="selectOperatorByUsername" parameterType="hashmap" resultType="Operator">
+		SELECT 
+			*
+		FROM sp_operator 
+		where username = #{username }
+	</select>
+	
+	<select id="searchOperatorByStauts" parameterType="hashmap" resultType="Operator">
+		SELECT 
+			*
+		FROM sp_operator 
+		where roleid = #{roleid }
+	</select>
+	
+	<update id="modifyOperator" parameterType="Operator">
+		update 
+			sp_operator
+		<set>
+			<if test="null != pwd">
+				PWD=#{pwd},
+			</if>
+		</set>	
+			where
+			USERID=#{userid}
+	</update>
+</mapper>

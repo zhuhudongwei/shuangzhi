@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+
+html *{-webkit-tap-highlight-color:rgba(0,0,0,0);margin:0;padding:0;-webkit-touch-callout:none;box-sizing:border-box;text-size-adjust:none;}
+body{font-family:"微软雅黑", "MS Gothic", "Times New Roman", "PMingLiU";background: #fff;font-size: 11pt;user-select: none;text-size-adjust: none;font-family: helvetica;}
+#tdhead{position: absolute;top: 0;left: 0;width: 100%;height:40px;z-index:99;user-select:none;}
+#logo{position:absolute;top:4px;left:4px;display:block;background-size: contain; background-repeat:no-repeat; background-position: left center;}
+#head{height:40px;position:absolute;right:80px;top:0;left:100px;overflow: hidden; /*自动隐藏文字*/text-overflow: ellipsis;/*文字隐藏后添加省略号*/white-space: nowrap;/*强制不换行*/color: white;}
+#headerBox,#headerBoxTime{color:#FFF;font-size:11pt;font-weight:400;line-height:40px}
+.exitChat{min-width:65px;border-radius: 4px;}
+.exitChat{height:30px;position:absolute;right:3px;top:5px}
+.exitChat a{display:block; font-size: 14px;text-align:center; line-height: 30px;text-decoration: none;}
+#notewrap{position:absolute;left:0px; top:40px;bottom:50px;width:100%;}#chatbody{margin-top:41px;}
+#wrap{position: absolute;display:block;z-index:1;width: 100%;}
+
+/*如果要使用冒泡形式的对话效果，请注释下面这些样式*/
+/*
+#history{border:none;padding:20px 10px 20px}
+#history span{clear:both;color:#000;display:block;font-weight:400;text-indent:12px}
+#history p.operator{color:#ff9603;font-weight:700;margin-top:12px}
+#history p.info{color:#777}
+#history p.visitor{color:#00A2ff;font-weight:700;margin-top:12px;}
+#history .time{color:#C7C7C7;float:right;font-weight:400}
+*/
+/*end*/
+
+#msg{position: absolute;bottom: 0;left: 0;height:50px;width:100%;z-index:99;user-select:none;}
+#twrap{float:left;background-size:35px 35px;height:35px;width:35px;margin:8px 0 0 7px;z-index:99}
+#toolbar{bottom:50px;height:135px;left:0;overflow:hidden;position:absolute;width:100%;z-index:110}
+.show{display:block;}.hide{display:none;}
+#tool_wrap{background-size:1px 50px;bottom:-50px;height:50px;left:0;position:absolute;width:100%;z-index:99}
+#tool_wrap #toolsbar{height:50px;z-index:99;position:relative;}
+#tool_wrap #toolsbar>li{float:left;font-size:10px;list-style-type:none;width:50px}
+#toolsbar>li>span{display:block;margin-bottom:8px;margin-top:30px;text-align:center;font-size:10px;}
+#toolsbar em{position:absolute;border-style:solid;border-width:5px;bottom:0;left:20px;}
+.biaoqing{padding-left:5px;padding-top:8px;padding-bottom:2px;position:absolute;left:0;top:-68px;width:640px;z-index:99; }
+.biaoqing span{height:20px;width:20px;display:inline-block;margin:4px; cursor: pointer;}
+.biaoqing span img{height:20px;width:20px;vertical-align:middle;border:0 none;}
+#uploadFileBox{position: absolute;top:-45px;left:0px; height: 45px;width: 100%; z-index: 99;}
+#uploadFileFrame{height:100%; border:none; width:100%;}
+.emoticons,.close,.open,.evaluation,.jumper,.LMessage,.file{background-position:center 4px;background-repeat:no-repeat;background-size:26px 26px}
+#inputarea{height: 35px;margin: 8px 90px 0px 49px;border-radius:10px; background: #ffffff;}
+#inputarea textarea,#inputarea input{border-radius:10px;font-size:16px;height:100%;line-height:22px;resize:none;outline: none;width:100%;background:transparent;}
+#enter_wrap{float:right;}
+#enter{margin:11px 4px 0 0;text-align:center;height: 30px;min-width: 80px;border-radius: 10px;}
+#enter label{font-family:"微软雅黑"; font-size: 16px;line-height: 30px;text-decoration: none;font-weight: bold;}
+#ensure{margin:0 auto;width: 56px;text-align:center;height:27px;min-width:56px;border-radius: 4px;}
+#ensure label{font-family:"微软雅黑"; font-size: 14px;line-height: 27px;text-decoration: none;font-weight: bold;}
+#wrapDiv{height:100%;width:100%;position:absolute;left:0;top:0;z-index:9999}
+#pngWrap{left:50%;position:absolute;top:50%; width:260px; height:242px; margin-left:-130px; margin-top:-121px;}
+.closeImg{ width:27px;height:27px; position: absolute; top:50%;left:50%;margin-left: 117px;margin-top: -134px;z-index: 10000;}
+#boxtitle{width:100%;}
+#boxtitle p{font-size:14px;line-height:29px;text-indent:8px;}
+.pingjia_cont{width:100%; height:225px;}
+#popDiv{margin: 0 auto;}
+#innerSurveyForm{font-size:14px;line-height:22px;}
+#innerSurveyForm p{line-height:18px;padding:2px 10px;}
+#innerSurveyForm p input{font:16px/1.5 tahoma,arial,sans-serif;vertical-align:middle;width:25px;height:25px;}
+#history .kefu span,#history .roboot span,#history .info span{display:inline}
+#history #keepChat{color:#0066cc;cursor: pointer;}
+.clear{clear:both}
+::-webkit-scrollbar{width:0}
+/**如果要使用冒泡形式的对话效果，请把下面的样式显示出来*/
+.chat-segment, .operator, .visitor, .sysinfo{position:relative;}
+.robotName, .userName {display:block;position:absolute;width:20px;height:10px;bottom:12px;z-index:1;}
+.robotName {left:13px;}
+.userName {right:12px;}
+.messageDate,.operator .time ,.visitor .time {font-size: 12px;color: white;display: block;margin: 0 auto;margin-bottom: 5px;clear: both;width: 60px;height: 20px;border-radius: 10px;line-height: 20px;}
+.visitor .user,.operator .robot {text-align:center; font-style:italic;}
+.robotContent, .userContent,p.info{	word-break:break-all;word-wrap: break-word;	border-radius: 5px;padding:8px 10px;display:inline;	min-width:50px;	min-height:20px;}
+.robotContent, .userContent{margin-bottom:8px;}
+p.info{	margin-top:8px;	margin-bottom:8px;}
+.robotContent img, .userContent img{vertical-align:middle;}
+.robotContent ,p.info{ float:left;margin-right:10%;margin-left:23px;}
+.userContent { float: right;margin-left: 10%;margin-right: 23px;}
+/*end*/
+#sysInfo{width:100%;height:28px;position:absolute;bottom:0px;left:0px;z-index:105; text-align:center; font-size:14px;line-height:28px;display:none;}
+/*下面是滚动条的样式*/
+.myScrollbarV{ position:absolute;z-index:100;width:5px;bottom:2px;top:2px;right:1px;}
+.myScrollbarH{ position:absolute;z-index:100;height:5px;bottom:1px;left:2px;right:7px}
+.myScrollbarV>div {position:absolute;z-index:100;width:100%;border-radius:2px;}
+.myScrollbarH>div {position:absolute;z-index:100;height:100%;border-radius:2px;}
+
+#key{position:absolute;right:3px;top:5px;height:30px;text-align:center;min-width:65px;border-radius: 4px;}
+#key a{display:block; font-size: 14px;line-height: 30px;text-decoration: none;}
+fieldset{border:none;margin:0;padding:0;width:100%}
+fieldset div{text-align:center}
+fieldset input,fieldset textarea,fieldset select{border-radius:5px;font-size:16px;font-weight:700;line-height:25px;margin-bottom:25px;padding:0;width:70%}
+.expTime{text-align: left; width:70%;margin:0 auto;color:gray;font-size:15px;font-weight: bold;}
+.callbackTitle{}
+textarea{height:80px}
+
+/* 手机样式*/
+.mobileContent{}
+.welcome{width:100%;}
+.welcome p{font-size:14px;line-height:29px;text-indent:8px;}
+.preform{width: 100%;height:225px;}
+.preform div {padding-top: 4px;}
+.preform div label { display: block; float: left; height: 20px; width: 70px; line-height: 20px; clear: both;}
+.preform .text { height: 20px; width: 200px; }
+.preform .but{ width: 170px;margin:0px auto;padding:10px 0px; text-align: center;}
+.preform .btn {font-size: 14px;line-height: 21px;text-decoration: none;text-align:center;height:27px;min-width:56px;border-radius: 4px; }
+.preform .req{clear: both;}
+.preform .gender{width:100px;clear: none;}

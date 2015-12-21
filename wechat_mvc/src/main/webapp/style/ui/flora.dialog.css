@@ -1,0 +1,136 @@
+/* This file skins dialog */
+
+.flora .ui-dialog, .flora.ui-dialog {
+	background-color: #FFF;
+}
+.flora .ui-dialog .ui-dialog-titlebar, .flora.ui-dialog .ui-dialog-titlebar {
+	border-bottom: 1px solid #d8d2aa;
+	padding: 0px;
+	height: 28px;
+	_height: 29px;
+}
+.flora .ui-draggable .ui-dialog-titlebar, .flora.ui-draggable .ui-dialog-titlebar {
+	cursor: move;
+}
+.flora .ui-draggable-disabled .ui-dialog-titlebar, .flora.ui-draggable-disabled .ui-dialog-titlebar {
+	cursor: default;
+}
+.flora .ui-dialog .ui-dialog-titlebar-close, .flora.ui-dialog .ui-dialog-titlebar-close {
+	font-size: 12px;
+	position:absolute;
+	top: 7px;
+	right: 7px;
+	cursor: default;
+	color:#fff;
+}
+.flora .ui-dialog .ui-dialog-titlebar-close span, .flora.ui-dialog .ui-dialog-titlebar-close span {
+	display: block;
+	color:red;
+	cursor:pointer;
+	line-height:14px
+}
+.flora .ui-dialog .ui-dialog-title, .flora.ui-dialog .ui-dialog-title {
+	margin-left: 5px;
+	color: #000;
+	font-weight: bold;
+	position: relative;
+	top: 7px;
+	left: 4px;
+}
+.flora .ui-dialog .ui-dialog-content, .flora.ui-dialog .ui-dialog-content {
+	margin: 1.2em;
+}
+.flora .ui-dialog .ui-dialog-buttonpane, .flora.ui-dialog .ui-dialog-buttonpane {
+	position: absolute;
+	bottom: 12px;
+	right: 0px;
+	width: 100%;
+	text-align: right;
+}
+.flora .ui-dialog .ui-dialog-buttonpane button, .flora.ui-dialog .ui-dialog-buttonpane button {
+	margin: 6px;
+}
+/* Dialog handle styles */
+.flora .ui-dialog .ui-resizable-n, .flora.ui-dialog .ui-resizable-n {
+	cursor: default;
+	height: 12px;
+	width: 100%;
+	top: -12px;
+	left: 0px;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.flora .ui-dialog .ui-resizable-s, .flora.ui-dialog .ui-resizable-s {
+	cursor: default;
+	height: 12px;
+	width: 100%;
+	bottom: -12px;
+	left: 0px;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.flora .ui-dialog .ui-resizable-e, .flora.ui-dialog .ui-resizable-e {
+	cursor: default;
+	width: 12px;
+	right: -12px;
+	top: 0px;
+	height: 100%;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.flora .ui-dialog .ui-resizable-w, .flora.ui-dialog .ui-resizable-w {
+	cursor: default;
+	width: 12px;
+	left: -12px;
+	top: 0px;
+	height: 100%;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.flora .ui-dialog .ui-resizable-se, .flora.ui-dialog .ui-resizable-se {
+	cursor: default;
+	width: 12px;
+	height:12px;
+	right: -12px;
+	bottom: -12px;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+/*	background: transparent url(../../image/dialog-rb.gif);*/
+}
+.flora .ui-dialog .ui-resizable-sw, .flora.ui-dialog .ui-resizable-sw {
+	cursor: default;
+	width: 12px;
+	height:12px;
+	left: -12px;
+	bottom: -12px;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+/*	background: transparent url(../../image/dialog-lb.gif);*/
+}
+.flora .ui-dialog .ui-resizable-nw, .flora.ui-dialog .ui-resizable-nw {
+	cursor: default;
+	width: 12px;
+	height:12px;
+	left: -12px;
+	top: -12px;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+/*	background: transparent url(../../image/dialog-lt.gif);*/
+}
+.flora .ui-dialog .ui-resizable-ne, .flora.ui-dialog .ui-resizable-ne {
+	cursor: default;
+	width: 12px;
+	height:12px;
+	right: -12px;
+	top: -12px;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+/*	background: transparent url(../../image/dialog-rt.gif);*/
+}
+
+.ui-dialog-overlay {
+	background-color: black;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+}
+

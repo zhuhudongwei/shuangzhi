@@ -1,0 +1,795 @@
+iframe[src*='ishare.tw'][src^='http://'] {
+	display: none !important;
+}
+iframe[src*='images.sohu.com/ytv/'] {
+	display: none !important;
+}
+iframe[src*='lu.sogou.com'] {
+	display: none !important;
+}
+#MyMoveAd {
+	display: none !important;
+}
+#QQ_Full {
+	display: none !important;
+}
+#ad_box1 {
+	display: none !important;
+}
+#ad_box2 {
+	display: none !important;
+}
+#ad_full {
+	display: none !important;
+}
+#ad_headerbanner {
+	display: none !important;
+}
+#ad_id {
+	display: none !important;
+}
+#ads_top_video {
+	display: none !important;
+}
+#adtop1 {
+	display: none !important;
+}
+#adx_cggp {
+	display: none !important;
+}
+#cs_left_couplet {
+	display: none !important;
+}
+#cs_right_couplet {
+	display: none !important;
+}
+#doyoo_mon_mask {
+	display: none !important;
+}
+#doyoo_monitor {
+	display: none !important;
+}
+#duilian_left {
+	display: none !important;
+}
+#duilian_right {
+	display: none !important;
+}
+#floatAd {
+	display: none !important;
+}
+#floatad-winpop {
+	display: none !important;
+}
+#js_ads_banner_top {
+	display: none !important;
+}
+#js_ads_banner_top_slide {
+	display: none !important;
+}
+#kfpopupDiv {
+	display: none !important;
+}
+#left_top_ad {
+	display: none !important;
+}
+#lovexin1 {
+	display: none !important;
+}
+#lovexin11 {
+	display: none !important;
+}
+#lovexin12 {
+	display: none !important;
+}
+#lovexin14 {
+	display: none !important;
+}
+#lovexin2 {
+	display: none !important;
+}
+#miaov_float_layer {
+	display: none !important;
+}
+#micast_ads {
+	display: none !important;
+}
+#my-adsFPR {
+	display: none !important;
+}
+#olfullad {
+	display: none !important;
+}
+#ptcmsad1 {
+	display: none !important;
+}
+.content-main#results > .eLeft {
+	display: none !important;
+}
+.focus#sitefocus {
+	display: none !important;
+}
+#snActive-wrap {
+	display: none !important;
+}
+[width='794'][height='60']#table1 {
+	display: none !important;
+}
+[width='812'][height='50']#table1 {
+	display: none !important;
+}
+#tanx-con-1 {
+	display: none !important;
+}
+#textggs {
+	display: none !important;
+}
+#top_ads0 {
+	display: none !important;
+}
+#toperAd2 {
+	display: none !important;
+}
+#tr_ad1 {
+	display: none !important;
+}
+#tr_ad10 {
+	display: none !important;
+}
+#tr_ad11 {
+	display: none !important;
+}
+#tr_ad2 {
+	display: none !important;
+}
+#tr_ad3 {
+	display: none !important;
+}
+#tr_ad4 {
+	display: none !important;
+}
+#tr_ad5 {
+	display: none !important;
+}
+#tr_ad6 {
+	display: none !important;
+}
+#tr_ad7 {
+	display: none !important;
+}
+#tr_ad8 {
+	display: none !important;
+}
+#tr_ad9 {
+	display: none !important;
+}
+._cggp {
+	display: none !important;
+}
+.a_cn {
+	display: none !important;
+}
+.a_fl {
+	display: none !important;
+}
+.a_fr {
+	display: none !important;
+}
+.a_h {
+	display: none !important;
+}
+.a_p {
+	display: none !important;
+}
+.a_pb {
+	display: none !important;
+}
+.a_pr {
+	display: none !important;
+}
+.ad250left {
+	display: none !important;
+}
+.ad336left {
+	display: none !important;
+}
+.ad72060 {
+	display: none !important;
+}
+.ad_headerbanner {
+	display: none !important;
+}
+.adsense160 {
+	display: none !important;
+}
+.adsense200 {
+	display: none !important;
+}
+.a_c.bm {
+	display: none !important;
+}
+.cari-ads {
+	display: none !important;
+}
+.con_ad {
+	display: none !important;
+}
+.content_ad_300 {
+	display: none !important;
+}
+.gg_full {
+	display: none !important;
+}
+.ggad {
+	display: none !important;
+}
+.ggtop {
+	display: none !important;
+}
+.google_adsense2 {
+	display: none !important;
+}
+.indexad2 {
+	display: none !important;
+}
+.indexad3 {
+	display: none !important;
+}
+.indexad4 {
+	display: none !important;
+}
+.it618_firstad_flex {
+	display: none !important;
+}
+.kf_qycn_com_cckf_welcomebox {
+	display: none !important;
+}
+.leftadv {
+	display: none !important;
+}
+.ml_ad1 {
+	display: none !important;
+}
+.ml_ad3 {
+	display: none !important;
+}
+.ml_ad5 {
+	display: none !important;
+}
+.mlad {
+	display: none !important;
+}
+.pagead_3 {
+	display: none !important;
+}
+.tipadds {
+	display: none !important;
+}
+.wf_ad_block {
+	display: none !important;
+}
+.a_f.wp {
+	display: none !important;
+}
+.wumii-bottom-popup {
+	display: none !important;
+}
+.wumii-widget-ad {
+	display: none !important;
+}
+.wzad {
+	display: none !important;
+}
+.yd_ad {
+	display: none !important;
+}
+.yd_ad1 {
+	display: none !important;
+}
+.yd_ad2 {
+	display: none !important;
+}
+.yd_ad3 {
+	display: none !important;
+}
+.yd_ad5 {
+	display: none !important;
+}
+.yd_ad6 {
+	display: none !important;
+}
+a[href*='/?INTR='] {
+	display: none !important;
+}
+a[href*='/?Intr='] {
+	display: none !important;
+}
+a[href*='/?intr='] {
+	display: none !important;
+}
+a[href*='_com/?aff='] {
+	display: none !important;
+}
+a[href='http://ldpgl.code.mytanwan.com/htmlcode/1045.html'] {
+	display: none !important;
+}
+a[href='http://www.xing9999.com/?k'] {
+	display: none !important;
+}
+a[href^='http://188.qy8.me'] {
+	display: none !important;
+}
+a[href^='http://vda.icantw.com/?q='] {
+	display: none !important;
+}
+a[href^='http://www.86600.com'] {
+	display: none !important;
+}
+a[href^='http://www.b6868.com'] {
+	display: none !important;
+}
+a[href^='http://www.rb88.com'] {
+	display: none !important;
+}
+a[href^='http://www.s889.net/?aff='] {
+	display: none !important;
+}
+a[href^='http://www.whao9.com'] {
+	display: none !important;
+}
+a[href^='https://www.18vpn.biz/r.php'] {
+	display: none !important;
+}
+script + #rbbox {
+	display: none !important;
+}
+script + [cellpadding='5'].sptable {
+	display: none !important;
+}
+iframe[src*='kiees.com'][src^='http://'] {
+	display: none !important;
+}
+iframe[src*='niuza.com'][src^='http://'] {
+	display: none !important;
+}
+iframe[src*='yiqifa.com'] {
+	display: none !important;
+}
+iframe[src*='/cooperation/'] {
+	display: none !important;
+}
+iframe[src*='/Sitefiles/'] {
+	display: none !important;
+}
+iframe[src*='114so.cn'] {
+	display: none !important;
+}
+iframe[src*='119xiazai.com'] {
+	display: none !important;
+}
+iframe[src*='163.com/special/'] {
+	display: none !important;
+}
+iframe[src*='3boys2girls.com'] {
+	display: none !important;
+}
+iframe[src*='51zxav.net'] {
+	display: none !important;
+}
+iframe[src*='6park.com'] {
+	display: none !important;
+}
+iframe[src*='99770.cc'] {
+	display: none !important;
+}
+iframe[src*='9upk.com/js/'] {
+	display: none !important;
+}
+iframe[src*='acg.178.com'][src*='/t_'] {
+	display: none !important;
+}
+iframe[src*='adsproject.nownews.com'] {
+	display: none !important;
+}
+iframe[src*='alexa.cn/ad'] {
+	display: none !important;
+}
+iframe[src*='am.zdnet.com.cn/www/images/'] {
+	display: none !important;
+}
+iframe[src*='bcok.com'] {
+	display: none !important;
+}
+iframe[src*='blog.china.com/u/dvpush/'] {
+	display: none !important;
+}
+iframe[src*='ccoo.cn/webdiy/'] {
+	display: none !important;
+}
+iframe[src*='cj.qidian.com'] {
+	display: none !important;
+}
+iframe[src*='club.pchome.net/'][src*='/localexchange.php'] {
+	display: none !important;
+}
+iframe[src*='cmsjs.eastmoney.com'] {
+	display: none !important;
+}
+iframe[src*='d.5.to'] {
+	display: none !important;
+}
+iframe[src*='dabaoku.com'] {
+	display: none !important;
+}
+iframe[src*='dddbbb.net'] {
+	display: none !important;
+}
+iframe[src*='dota2.uuu9.com'] {
+	display: none !important;
+}
+iframe[src*='enshi.cn/userfiles/esrb/'] {
+	display: none !important;
+}
+iframe[src*='fumanhua.com/template/'][src*='/images/g_js/'] {
+	display: none !important;
+}
+iframe[src*='games.ifeng.com'] {
+	display: none !important;
+}
+iframe[src*='hao.7759.com'] {
+	display: none !important;
+}
+iframe[src*='happydown.com'] {
+	display: none !important;
+}
+iframe[src*='hoopchina.com.cn/topn'] {
+	display: none !important;
+}
+iframe[src*='images.china.cn'][src*='first/'] {
+	display: none !important;
+}
+iframe[src*='javjunkies.com/FL'] {
+	display: none !important;
+}
+iframe[src*='js.bxwxtxt.com'] {
+	display: none !important;
+}
+iframe[src*='mahua.com/api/'] {
+	display: none !important;
+}
+iframe[src*='mfxk.com'] {
+	display: none !important;
+}
+iframe[src*='momoshop.com.tw/goods/GoodsDetail.jsp?'] {
+	display: none !important;
+}
+iframe[src*='narutom.com/v2/v/'] {
+	display: none !important;
+}
+iframe[src*='ouyaoxiazai.com'] {
+	display: none !important;
+}
+iframe[src*='pc6.com'] {
+	display: none !important;
+}
+iframe[src*='pfp.sina.com.cn'] {
+	display: none !important;
+}
+iframe[src*='qq.com/game/footerbar'] {
+	display: none !important;
+}
+iframe[src*='qqtz.com/ad'] {
+	display: none !important;
+}
+iframe[src*='readnovel.com/js/'] {
+	display: none !important;
+}
+iframe[src*='same'][src*='.jrj.com.cn'] {
+	display: none !important;
+}
+iframe[src*='sh114so.com'] {
+	display: none !important;
+}
+iframe[src*='show.qx15.com'] {
+	display: none !important;
+}
+iframe[src*='show.xiazai16.com'] {
+	display: none !important;
+}
+iframe[src*='sina.com.tw'] {
+	display: none !important;
+}
+iframe[src*='stnn.cc/images/xy/300'] {
+	display: none !important;
+}
+iframe[src*='sz.zj.cn/info.php?fid='] {
+	display: none !important;
+}
+iframe[src*='tk001.com/quote'] {
+	display: none !important;
+}
+iframe[src*='tt1069.com/bbs/ad'] {
+	display: none !important;
+}
+iframe[src*='tvf4.com'] {
+	display: none !important;
+}
+iframe[src*='udn.com.tw/upf/'] {
+	display: none !important;
+}
+iframe[src*='uuu9.tieba.com'] {
+	display: none !important;
+}
+iframe[src*='w010w.com.cn'] {
+	display: none !important;
+}
+iframe[src*='wan.sogou.com/cdn/'] {
+	display: none !important;
+}
+iframe[src*='wholehk.com/madads'] {
+	display: none !important;
+}
+iframe[src*='xiaoliaolianmeng.com'] {
+	display: none !important;
+}
+iframe[src*='ylnet.com.cn/inc/ad'] {
+	display: none !important;
+}
+iframe[src*='/page/adv.html?advId='] {
+	display: none !important;
+}
+iframe[src*='letv.com'][src*='/tuiguang/'] {
+	display: none !important;
+}
+iframe[src*='.com/ads/'] {
+	display: none !important;
+}
+iframe[src*='.se/?placement='][src^='http://'] {
+	display: none !important;
+}
+iframe[src*='/advertisers.'] {
+	display: none !important;
+}
+iframe[src*='/overture/'] {
+	display: none !important;
+}
+iframe[src*='com/banners/'] {
+	display: none !important;
+}
+iframe[src*='/160.html'] {
+	display: none !important;
+}
+iframe[src*='/300.html'] {
+	display: none !important;
+}
+iframe[src*='/728.html'] {
+	display: none !important;
+}
+a[href^='http://www.google.com/aclk?'] {
+	display: none !important;
+}
+iframe[src*='google.com/uds/afs?'][src*='adsense'] {
+	display: none !important;
+}
+iframe[src*='google.com/adsense/'] {
+	display: none !important;
+}
+iframe[src*='google.com/uds/afs?'] {
+	display: none !important;
+}
+iframe[src*='google.com/uds/modules/elements/newsshow/iframe.html?format=728x90'] {
+	display: none !important;
+}
+iframe[src*='www.google.com/ads/preferences/'] {
+	display: none !important;
+}
+iframe[src*='accounts.google.com'] {
+	display: none !important;
+}
+iframe[src*='bpui0.google.com'] {
+	display: none !important;
+}
+iframe[src*='google.com/payments/'][src*='/adwords.'] {
+	display: none !important;
+}
+#videoLeftAd {
+	display: none !important;
+}
+#videoRightAd {
+	display: none !important;
+}
+.adbox {
+	display: none !important;
+}
+#LeftAd {
+	display: none !important;
+}
+#RightAd {
+	display: none !important;
+}
+.ad_box_topl {
+	display: none !important;
+}
+.ad_box_topr {
+	display: none !important;
+}
+[class^='duilian'] {
+	display: none !important;
+}
+[id^='duilian'] {
+	display: none !important;
+}
+#index_ads {
+	display: none !important;
+}
+iframe[src*='www.37cs.com'] {
+	display: none !important;
+}
+#forum_adlist {
+	display: none !important;
+}
+.dw-site-popupbox {
+	display: none !important;
+}
+iframe[src*='.mediav.com'] {
+	display: none !important;
+}
+.win17173 {
+	display: none !important;
+}
+.g-qiyu {
+	display: none !important;
+}
+.amazon_banner {
+	display: none !important;
+}
+a[href^='http://365fuck.'] img {
+	display: none !important;
+}
+a[href^='http://rd.wan.360.cn/reg'] img {
+	display: none !important;
+}
+.guokr-layer-beforelogin {
+	display: none !important;
+}
+.ad_full {
+	display: none !important;
+}
+#floatAdv1 {
+	display: none !important;
+}
+#J_loginGuide {
+	display: none !important;
+}
+#FullAdscontent {
+	display: none !important;
+}
+.adtopbox {
+	display: none !important;
+}
+.Ad_300_2 {
+	display: none !important;
+}
+#KLpDiv {
+	display: none !important;
+}
+.comiis_rad {
+	display: none !important;
+}
+.comiis_wrapad {
+	display: none !important;
+}
+#bbtang5ict {
+	display: none !important;
+}
+#zjgjs_banner {
+	display: none !important;
+}
+.ad05 {
+	display: none !important;
+}
+.ad06 {
+	display: none !important;
+}
+.ad07 {
+	display: none !important;
+}
+.ad08 {
+	display: none !important;
+}
+.baiduad {
+	display: none !important;
+}
+#ad-bigbanner {
+	display: none !important;
+}
+.adv_box {
+	display: none !important;
+}
+.r_one div.tips {
+	display: none !important;
+}
+[id*='iframe'][id*='_ads'] {
+	display: none !important;
+}
+.gg960x90 {
+	display: none !important;
+}
+#yieldsquare-ad {
+	display: none !important;
+}
+#J_videoBox img.view {
+	display: none !important;
+}
+.advert {
+	display: none !important;
+}
+.ad_left {
+	display: none !important;
+}
+.ad_right {
+	display: none !important;
+}
+#banner_left {
+	display: none !important;
+}
+#banner_right {
+	display: none !important;
+}
+#ad_banner {
+	display: none !important;
+}
+#ad_banner_list {
+	display: none !important;
+}
+.float-ad-wrap {
+	display: none !important;
+}
+.ad970 {
+	display: none !important;
+}
+.ad980 {
+	display: none !important;
+}
+a[href^='http://js.50bang.org'] {
+	display: none !important;
+}
+#playertiepian_ckp {
+	display: none !important;
+}
+#left_adv {
+	display: none !important;
+}
+.full_ad {
+	display: none !important;
+}
+.half_ad {
+	display: none !important;
+}
+[class^='content_ad'] {
+	display: none !important;
+}
+.adsbygoogle {
+	display: none !important;
+}
+#ad_text {
+	display: none !important;
+}
+.adBox {
+	display: none !important;
+}
+.adLeft {
+	display: none !important;
+}
+.adRight {
+	display: none !important;
+}
+.adtop {
+	display: none !important;
+}
+[id^='ad_top_'] {
+	display: none !important;
+}
+.top-ads {
+	display: none !important;
+}

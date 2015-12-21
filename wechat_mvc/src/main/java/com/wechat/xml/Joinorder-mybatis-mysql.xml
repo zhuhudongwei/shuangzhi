@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.Joinorder"> 
+	
+	<sql id="pagesql">
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</sql>
+	
+	<insert id="insert" parameterType="Joinorder">
+		insert into 
+			SC_JOINORDER(
+				ID,
+				LOADINGNOTE,
+				ORDERNO,
+				CUSTOMERNO,
+				CUSTOMERNAME,
+				TRANSPORTATIONNO,
+				TRANSPORTATION,
+				SOURCENAME,
+				SOURCENO,
+				SUPPLIERNO,
+				SUPPLIERNAME,
+				TRANSMODE,
+				SHIPDATE,
+				ETA,
+				GROPID,
+				CORPID,
+				MAKEDATE,
+				JOINID,
+				JOINNOTE
+			)values(
+				#{id},
+				#{loadingnote},
+				#{orderno},
+				#{customerno},
+				#{customername},
+				#{transportationno},
+				#{transportation},
+				#{sourcename},
+				#{sourceno},
+				#{supplierno},
+				#{suppliername},
+				#{transmode},
+				#{shipdate},
+				#{eta},
+				#{gropid},
+				#{corpid},
+				#{makedate},
+				#{joinid},
+				#{joinnote}
+			)
+	</insert>
+	
+	
+	<select id="selectMaxId" resultType="int">
+			SELECT 
+				max(ID)
+			FROM SC_JOINORDER 
+	</select>
+	
+	<delete id="delete" parameterType="hashmap">
+		delete 
+			from SC_JOINORDER
+		where
+			ID = #{id}
+			and JOINID = #{joinid}
+	</delete>
+	
+	<select id="searchJoinorder" parameterType="hashmap" resultType="Joinorder">
+			SELECT 
+				*
+			FROM SC_JOINORDER 
+			where
+			LOADINGNOTE=#{loadingnote}
+	</select>
+	
+	<select id="searchJoinorderById" parameterType="hashmap" resultType="Joinorder">
+			SELECT 
+				*
+			FROM SC_JOINORDER 
+			where
+			ID=#{id}
+	</select>
+	
+	<update id="updateJoinorder" parameterType="Joinorder">
+		update 
+			SC_JOINORDER
+		<set>
+			<if test="null != id">
+				JOINID=#{id}
+			</if>
+		</set>	
+			where JOINID = #{joinid }
+	</update>
+	
+	<select id="searchJoinOrderByJoinId" parameterType="hashmap" resultType="Joinorder">
+			SELECT 
+				*
+			FROM SC_JOINORDER 
+			where
+			JOINID=#{joinid}
+	</select>
+	
+	<select id="searchJoinOrderByloadingnote" parameterType="hashmap" resultType="Joinorder">
+			SELECT 
+				*
+			FROM SC_JOINORDER 
+			where
+			LOADINGNOTE=#{loadingnote}
+	</select>
+</mapper>

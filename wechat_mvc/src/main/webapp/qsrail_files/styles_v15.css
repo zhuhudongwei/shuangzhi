@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wrap{ width:100%; min-width:320px;  max-width:720px;margin:0 auto; height:auto; font-family:'microsoft yahei',Verdana,Arial,Helvetica,sans-serif; background:#f6f6f6;overflow: hidden;}
+.wrap img{ max-width:100%; max-height:100%;}
+.wrap a{ text-decoration:none;}
+.icons{ background:url(i/mob-icons.png) no-repeat;}
+.index-top{ padding:10px; height:auto; margin:0 auto; background:url(i/header-bg.png) no-repeat;background-size: 100%;}
+.index-top-lst{ width:100%; height:auto; /*margin-bottom:9px;*/ overflow:hidden;}
+.index-top-lst li{ float:left;}
+.index-top-lst .itl1{ width:22%; font-size: .85em; color:#fff; padding-top: .8em;}
+.index-top-lst .itl2{ width:66%;}
+/*.index-top-lst .itl3{ width:12%; float:right;}*/
+.iwzs{ width: 1.5em; height: 2em; display:inline-block; background-position: -11px -11px; vertical-align: -10px; background-size: 50em 50em;}
+.ishbg{ width:198px; height: auto; margin:0 auto; background-position: -192px -59px; background-size: 40em 40em; overflow: hidden;}
+.ishbg-sub{ width: 25px;  background:none; border:0; float:left; margin-top: 11px; margin-left: 10px;}
+.ishbg-ipt{ width: 150px; height: 36px;  border:0; font-size: .85em; background:none; color:#bbbbbb; float:left; margin-top: 2px; margin-left: 5px;}
+.ismewm{ width: 2em; height: 2.2em; background-position: -600px -15px; display:block; float:right; background-size: 40em;}
+.index-top-shop-info{ width:100%; height:auto; display: table;}
+.index-top-shop-info .pic{ width: 90px; height: 75px; float:left; display: table-cell;}
+.index-top-shop-info .its-info-cont{ float:left; width: 67%;position: relative;}
+.index-top-shop-info .its-info-cont h3{ width: 95%; height: 20px; overflow: hidden; font-size:.95em; color:#fff; margin: 10px 0; padding-left:10px; position: relative;}
+.its-info-cont-cz{width: 100%;  height: auto;padding-left:10px;}
+.igzs,.ilxkf,.ilxhk,.indexgz{height: 30px; display:block; float:left;color:#fff; font-size: .75em;  line-height: 30px;text-align: center;text-indent: 20px;}
+.igzs{ width: 78px; background: url(i/gz-bg.png) no-repeat;background-size: 100%; margin-right: 5px;}
+.ilxkf{ width: 108px;background: url(i/call-kf-bg.png) no-repeat; background-size: 100%;}
+.ilxhk{ width: 108px;background: url(i/heka-bg.png) no-repeat; background-size: 100%;}
+.indexgz{  width: 78px; background: url(i/qx-bg.png) no-repeat;background-size: 100%;}
+ 
+/*==错误提示==*/
+.error{color:#f00; font-size: .85em;}
+
+/*==登录样式==*/
+.login-cont{ background:#f6f6f6; min-height:480px;}
+.login-top{ background:#e3ded4; height:60px; line-height:60px;  padding:0 15px;}
+.login-top .prev{width: 14%;display: block;float: left;height: 60px;font-size: .85em; position:relative;}
+.iprevl{width: 20px;height: 30px;display: block;background-size: 50em;background-position:-13px -420px;position: relative;top: 7px;}
+.login-top .text{color:#6a5334;width: 72%;float: left;text-align: center;letter-spacing: 2px; font-size:18px;}
+.login-top .regs{width: 14%; float:right; color:#424242;letter-spacing: 2px; text-align:center;}
+.login-tips-cont{ color: #727272; font-size: .85em; position: relative; margin:20px 0px ;}
+.login-tips-cont .bg{ background: #dedede;height: 1px;position: absolute;top: 15px;width: 100%;}
+.login-tips-cont .text{display: block;position:relative; background: #f6f6f6;width: 310px;text-align: center; margin:0 auto;}
+.login-ent-cont{ margin:0 28px; margin-bottom: 10px;}
+.lg-cont-box{  margin-bottom:10px;}
+.lg-cont-box .ipt{background:#fff; width:100%; height:68px; line-height:68px;border:1px solid #e5e5e5;  border-radius:10px;   }
+.lg-cont-box .iptn{border:0;clear:both;margin-top: 10px; border:1px solid #e5e5e5;  }
+.lg-cont-box .ipsc{border:0;clear:both;margin-top: 10px; border:1px solid #e5e5e5;  }
+.lg-cont-box .tspan{ width:80px; height:68px; float:left; margin-left:7px;}
+.lg-cont-box .tinput{ width:160px; float:left;  border:0; color:#c9c9c9; padding-left:8px;margin-top:10px; height:48px;  }
+.iusipt,.iuspass,.iussearch{width: 48px;height: 48px;display: block;background-size: 20em;position: relative;top: 10px;left:20px;}
+.iusipt{background:url(ic_login_account-number_enter.png);}
+.iuspass{background:url(ic_login_password_enter.png); }
+.iussearch{background:url(./ic_search.png); }
+.lg-btn{width:100%; background:url(./btn_big_nor.png) center;background-size:100% 100%; height:68px; }
+.lg-btn .btn{width:100%; height:68px; color:#fff;border:0;-webkit-appearance: none; font-size:1.95em; background:inherit; font-weight:500;}
+.fg-psw{ height:21px; padding:8px 0; position:relative;}
+.fg-psw a{ color:#727272; font-size:.85em; font-weight:700; float:right;}
+.login-third-party{overflow:hidden;padding: 0 22px;}
+.login-third-party a{ float:left; width:33%;}
+.iqqlg,.iwblg,.iwxlg{ width:60px; height:60px;display: block;margin:0 auto; background-size:43em;}
+.iqqlg{ background-position: -40px -109px;}
+.iwblg{ background-position: -110px -109px;}
+.iwxlg{ background-position: -180px -109px;}
+.login-sel-lx{  text-align:center; width:100%;margin :20px auto;}
+.login-sel-lx label{ float:left; width:50%; font-size:.85em; color:#666;}
+.login-sel-lx label input{vertical-align: -1px;margin-right: 2px;}
+
+ 
+.change-cont{margin:10px; padding:10px;background:#fff;min-width:280px;font-size:.85em } 
+.change-cat{font-size:1.15em;font-weight:550;height:34px;}
+.change-msg{width:100%;line-height:20px;height:28px;color:#333333}
+.change-msg label{float: left;width:50%; white-space:nowrap;} 
+.change-msg span{color:#666} 
+.dashed-line{border-top:1px dashed #cccccc;height: 1px;overflow:hidden;margin:20px 0;}
+.cat-r{font-size:.75em;float:right;color:#6a5334;vertical-align:bottom;} 
+.change-follow{background:url(./ic_waybill-information_order-tracking.png) no-repeat left;height:60px;line-height:30px; padding-left:40px;} 
+.change-follow span{color:#666} 
+.change-msg em{width:50px;float:left;display:block;} 
+.change-msg .ad{width:80%;display:block;float:left;}  
+ 
+ 
+ 

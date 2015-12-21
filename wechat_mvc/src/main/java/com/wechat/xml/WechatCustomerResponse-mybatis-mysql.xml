@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.WechatCustomerResponse"> 
+	
+	<sql id="pagesql">
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</sql>
+	
+	<insert id="WechatCustomerResponseinsert" parameterType="WechatCustomerResponse">
+		insert into 
+			wc_customer_response(
+				response_id,
+				customer_id,
+				response_time,
+				response_content,
+				response_name,
+				issend
+			)values(
+				#{response_id},
+				#{customer_id},
+				#{response_time},
+				#{response_content},
+				#{response_name},
+				#{issend}
+			)
+	</insert>
+	
+	<select id="selectMaxId" resultType="long">
+			SELECT 
+				max(response_id)
+			FROM wc_customer_response 
+	</select>
+	
+	<select id="selectWechatCustomerResponseByOpenId" parameterType="hashmap" resultType="WechatCustomerResponse">
+			SELECT 
+				*
+			FROM wc_customer_response 
+		where customer_id = #{customer_id}
+		and issend = #{issend}
+		order by response_time
+	</select>
+	
+	<select id="listWechatCustomerResponseByIsSend" parameterType="hashmap" resultType="WechatCustomerResponse">
+			SELECT
+			wcr.*
+			FROM
+			wc_customer AS wc
+			LEFT JOIN wc_customer_response AS wcr ON wc.customer_id = wcr.customer_id
+			WHERE
+			wc.open_id = #{open_id}
+			and wcr.issend = 0;
+	</select>
+	
+	<select id="selectWechatCustomerResponseByOpenId2" parameterType="hashmap" resultType="WechatCustomerResponse">
+			SELECT 
+				*
+			FROM wc_customer_response 
+		where customer_id = #{customer_id}
+		order by response_time
+	</select>
+	
+	<update id="updateWechatCustomerResponseByState" parameterType="hashmap">
+		update 
+			wc_customer_response
+		<set>
+			<if test="null != issend">
+				issend = #{issend}
+			</if>
+		</set>	
+			where
+			response_id=#{response_id}
+	</update>
+	
+</mapper>

@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+
+#tdhead {
+	box-shadow:0 1px 2px #B4B4B4, 0 1px 0px #AECBED inset;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5c5c5b), to(#141414));
+	background: -moz-linear-gradient(top, #5c5c5b, #141414);
+	background: -ms-linear-gradient(top, #5c5c5b, #141414);
+	background: -o-linear-gradient(top, #5c5c5b, #141414);
+	background: linear-gradient(top, #5c5c5b, #DAD8D2);
+	border-bottom:1px solid #000;
+}
+.exitChat {
+	box-shadow:0px 1px 0px #AECBED inset;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5c5c5b), to(#141414));
+	background: -moz-linear-gradient(top, #5c5c5b, #141414);
+	background: -ms-linear-gradient(top, #5c5c5b, #141414);
+	background: -o-linear-gradient(top, #5c5c5b, #141414);
+	background: linear-gradient(top, #5c5c5b, #141414);
+	border:1px solid #000;
+}
+.exitChat a {
+	color: white;
+	text-shadow: -1px -1px 0 #7C8073;
+}
+#history p.info { color:#666; }
+#msg {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#EBE7DE), to(#E5DECD));
+	background: -moz-linear-gradient(top, #EBE7DE, #E5DECD);
+	background: -ms-linear-gradient(top, #EBE7DE, #E5DECD);
+	background: -o-linear-gradient(top, #EBE7DE, #E5DECD);
+	background: linear-gradient(top, #EBE7DE, #E5DECD);
+	border-top:1px solid #CBC8C1;
+}
+#tool_wrap { background:url(images/toolbar.png) repeat-x; }
+#tool_wrap #toolsbar>li { color:#FFF; }
+#toolsbar em { border-color:transparent transparent #F8F9F8; }
+.biaoqing, #uploadFileBox {
+	border-top:1px solid #ddd;
+	background: rgba(255, 255, 255, 0.6) !important;
+}
+.emoticons { background-image:url(images/biaoqing.png) }
+.close { background-image:url(images/Sound.png) }
+.open { background-image:url(images/Sound2.png) }
+.evaluation { background-image:url(images/callback.png) }
+.jumper { background-image:url(images/service.png) }
+.LMessage { background-image:url(images/leaveMsg.png) }
+.file { background-image:url(images/sendfile.png) }
+#inputarea textarea, #inputarea input {
+	box-shadow:0 2px 1px #A6A095 inset;
+	border:1px solid #D6D7D6;
+}
+#enter {
+	box-shadow: 0px 1px 0px #C8C3B9, 0px 1px 1px #fff inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#F0EDE4), to(#E2DBCA));
+	background: -moz-linear-gradient(top, #F0EDE4, #E2DBCA);
+	background: -ms-linear-gradient(top, #F0EDE4, #E2DBCA);
+	background: -o-linear-gradient(top, #F0EDE4, #E2DBCA);
+	background: linear-gradient(top, #F0EDE4, #E2DBCA);
+	border: 1px solid #A69D8A;
+}
+#enter label {
+	color: #6F6B60;
+	text-shadow: 0 1px 1px white;
+}
+#ensure {
+	box-shadow:0px 1px 0px #AECBED inset;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5c5c5b), to(#141414));
+	background: -moz-linear-gradient(top, #5c5c5b, #141414);
+	background: -ms-linear-gradient(top, #5c5c5b, #141414);
+	background: -o-linear-gradient(top, #5c5c5b, #141414);
+	background: linear-gradient(top, #5c5c5b, #141414);
+	border:1px solid #000;
+}
+#ensure label {
+	color: #fff;
+	text-shadow: -1px -1px 1px #7C8073;
+}
+#wrapDiv { background:rgba(0, 0, 0, 0.3); }
+#pngWrap { background: gray; }
+#boxtitle, .welcome {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5c5c5b), to(#141414));
+	background: -moz-linear-gradient(top, #5c5c5b, #141414);
+	background: -ms-linear-gradient(top, #5c5c5b, #141414);
+	background: -o-linear-gradient(top, #5c5c5b, #141414);
+	background: linear-gradient(top, #5c5c5b, #141414);
+	border:1px solid #000;
+}
+#boxtitle p, .welcome p {
+	color:#fff;
+	text-shadow:-1px -1px 1px #7C8073
+}
+.pingjia_cont, .preform {
+	border-bottom:1px solid #000;
+	border-left:1px solid #000;
+	border-right:1px solid #000;
+	background:#fff;
+}
+#innerSurveyForm { color:#000; }
+/**如果要使用冒泡形式的对话效果，请把下面的样式显示出来*/
+.robotName {
+	background: url(images/chat1.png) no-repeat;
+	background-size:cover;
+}
+.userName {
+	background:url(images/chat2.png) no-repeat;
+	background-size:cover;
+}
+.messageDate, .operator .time, .visitor .time {
+	color: white;
+	background: #9a9a9a;
+}
+.robotContent, p.info {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#EFEBE0), to(#DAD8D2));
+	background: -moz-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: -ms-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: -o-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: linear-gradient(top, #EFEBE0, #DAD8D2);
+	border: 1px solid #A4A4A4;
+	box-shadow: 0px 0px 1px #E7E5DF inset, 0px 1px 0px #B2ADA6;
+}
+.userContent {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#BBDDF6), to(#8BC6EF));
+	background: -moz-linear-gradient(top, #BBDDF6, #8BC6EF);
+	background: -ms-linear-gradient(top, #BBDDF6, #8BC6EF);
+	background: -o-linear-gradient(top, #BBDDF6, #8BC6EF);
+	background: linear-gradient(top, #BBDDF6, #8BC6EF);
+	border: 1px solid #438CBA;
+	box-shadow: 0px 0px 1px #D4E9F8 inset, 0px 1px 0px #B3ADA6;
+}
+/*end*/
+#sysInfo {
+	background:rgba(81, 75, 73, 0.5) !important;
+	color:#fff;
+}
+/*下面是滚动条的样式*/
+.myScrollbarV>div {
+	background:-webkit-gradient(linear, 0 0, 100% 0, from(#EFEBE0), to(#DAD8D2));
+	background: -moz-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: -ms-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: -o-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: linear-gradient(top, #EFEBE0, #DAD8D2);
+	border:1px solid #A4A4A4;
+	box-shadow:inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+.myScrollbarH>div {
+	background:-webkit-gradient(linear, 0 0, 100% 0, from(#EFEBE0), to(#DAD8D2));
+	background: -moz-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: -ms-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: -o-linear-gradient(top, #EFEBE0, #DAD8D2);
+	background: linear-gradient(top, #EFEBE0, #DAD8D2);
+	border:1px solid #A4A4A4;
+	box-shadow:inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+#key {
+	box-shadow:0px 1px 0px #AECBED inset;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5c5c5b), to(#141414));
+	background: -moz-linear-gradient(top, #5c5c5b, #141414);
+	background: -ms-linear-gradient(top, #5c5c5b, #141414);
+	background: -o-linear-gradient(top, #5c5c5b, #141414);
+	background: linear-gradient(top, #5c5c5b, #141414);
+	border:1px solid #000;
+}
+#key a {
+	color: white;
+	text-shadow: -1px -1px 0 #7C8073;
+}
+fieldset input, fieldset textarea, fieldset select {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#E9EAE9), color-stop(90%, #ffffff), to(#EDEEED));
+	background: -moz-linear-gradient(top, #E9EAE9 0%, #ffffff 90%, #EDEEED 100%);
+	background: -ms-linear-gradient(top, #E9EAE9 0%, #ffffff 90%, #EDEEED 100%);
+	background: -o-linear-gradient(top, #E9EAE9 0%, #ffffff 90%, #EDEEED 100%);
+	background: linear-gradient(top, #E9EAE9 0%, #ffffff 90%, #EDEEED 100%);
+	box-shadow:0 1px 0px #B4B4B4 inset;
+	border:1px solid #D6D7D6;
+	color:#878887;
+}
+.expTime { color:gray; }
+.closeImg a {
+	display:block;
+	width:27px;
+	height:27px;
+	background:url(images/x_pic.png) no-repeat;
+	background-position: 0px 0px;
+}
+.closeImg a:hover { background-position: 0px -28px; }
+/* 手机样式*/
+.preform .text { border: 1px solid #CCCCCC; }
+.preform span { color: #990000; }
+.preform .btn {
+	color: white;
+	text-shadow: -1px -1px 0 #7C8073;
+	box-shadow:0px 1px 0px #AECBED inset;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#5c5c5b), to(#141414));
+	background: -moz-linear-gradient(top, #5c5c5b, #141414);
+	background: -ms-linear-gradient(top, #5c5c5b, #141414);
+	background: -o-linear-gradient(top, #5c5c5b, #141414);
+	background: linear-gradient(top, #5c5c5b, #141414);
+	border:1px solid #000;
+}

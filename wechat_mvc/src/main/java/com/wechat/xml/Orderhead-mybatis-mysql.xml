@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="com.wechat.model.Orderhead"> 
+	
+	<resultMap type="Orderhead"
+		id="OrderheadPojo">
+		<result property="id" column="id" />
+		<result property="ordernohead" column="ordernohead" />
+		<result property="billdate" column="billdate" />
+		<result property="senderno" column="senderno" />
+		<result property="sendername" column="sendername" />
+		<result property="sendtel" column="sendtel" />
+		<result property="fax" column="fax" />
+		<result property="guestno" column="guestno" />
+		<result property="guestname" column="guestname" />
+		<result property="receiveman" column="receiveman" />
+		<result property="receivetel" column="receivetel" />
+		<result property="supplierno" column="supplierno" />
+		<result property="suppliername" column="suppliername" />
+		<result property="gropid" column="gropid" />
+		<result property="corpid" column="corpid" />
+		<result property="maker" column="maker" />
+		<result property="makedate" column="makedate" />
+		<result property="editor" column="editor" />
+		<result property="editdate" column="editdate" />
+		<result property="approver" column="approver" />
+		<result property="approvedate" column="approvedate" />
+		<result property="status" column="status" />
+		<result property="memo" column="memo" />
+		<result property="sfilename" column="sfilename" />
+		<result property="subject" column="subject" />
+		<result property="sysorderno" column="sysorderno" />
+		<result property="rejectmemo" column="rejectmemo" />
+		<result property="rejectdate" column="rejectdate" />
+		<result property="receivedate" column="receivedate" />
+		<result property="driverreceivedate" column="driverreceivedate" />
+		<result property="truckno" column="truckno" />
+		<result property="trucktype" column="trucktype" />
+		<result property="inExpDay" column="inExpDay" />
+		<result property="outExpDay" column="outExpDay" />
+		<result property="drivername" column="drivername" />
+		<result property="tel" column="tel" />
+		<result property="idcard" column="idcard" />
+		<result property="controldate" column="controldate" />
+		<result property="picktime" column="picktime" />
+		<result property="updreason" column="updreason" />
+		<result property="upddate" column="upddate"/>
+		<result property="updname" column="updname"/>
+		<result property="sourcecheckdate" column="sourcecheckdate"/>
+		<result property="ishide" column="ishide"/>
+		<result property="appsubmitcnt" column="appsubmitcnt"/>
+		<result property="area2" column="area2" />
+		<result property="sourceno2" column="sourceno2" />
+		<result property="transportation2" column="transportation2" />
+		<result property="transportationno2" column="transportationno2"/>
+		<result property="shipdate2" column="shipdate2"/>
+		<result property="loadindate2" column="loadindate2"/>
+		<result property="loadoutdate2" column="loadoutdate2"/>
+		<result property="unloadoutdate2" column="unloadoutdate2"/>
+		<result property="vehischedulexception2" column="vehischedulexception2" />
+		<result property="loadexceptionday2" column="loadexceptionday2"/>
+		<result property="uploadexceptionday2" column="uploadexceptionday2"/>
+		<result property="loadingnote2" column="loadingnote2"/>
+		
+		<collection property="orderDetails" column="id" ofType="OrderDetail">    
+            <result property="id" column="id" />
+			<result property="loadingnote" column="loadingnote" />
+			<result property="orderno" column="orderno" />
+			<result property="customerno" column="customerno" />
+			<result property="customername" column="customername" />
+			<result property="transportationno" column="transportationno" />
+			<result property="transportation" column="transportation" />
+			<result property="productname" column="productname" />
+			<result property="productno" column="productno" />
+			<result property="planquantity" column="planquantity" />
+			<result property="batch" column="batch" />
+			<result property="sourcename" column="sourcename" />
+			<result property="sourceno" column="sourceno" />
+			<result property="transmode" column="transmode" />
+			<result property="shipdate" column="shipdate" />
+			<result property="eta" column="eta" />
+			<result property="deliverynote" column="deliverynote" />
+			<result property="insulationstays" column="insulationstays" />
+			<result property="gropid" column="gropid" />
+			<result property="corpid" column="corpid" />
+			<result property="maker" column="maker" />
+			<result property="makedate" column="makedate" />
+			<result property="editdate" column="editdate" />
+			<result property="unit" column="unit" />
+			<result property="sfilename" column="sfilename" />
+			<result property="dtlid" column="dtlid" />
+			<result property="supplierno" column="supplierno" />
+			<result property="suppliername" column="suppliername" />
+			<result property="loadindate" column="loadindate" />
+			<result property="loadoutdate" column="loadoutdate" />
+			<result property="unloadindate" column="unloadindate" />
+			<result property="unloadoutdate" column="unloadoutdate" />
+			<result property="loadnum" column="loadnum" />
+			<result property="signnum" column="signnum" />
+			<result property="deliveryaddress" column="deliveryaddress" />
+			<result property="updreason" column="updreason" />
+			<result property="upddate" column="upddate" />
+			<result property="updname" column="updname" />
+			<result property="pcsign" column="pcsign"/>  
+        </collection> 
+	</resultMap>
+	
+	<insert id="insert_ORDERDETAIL" parameterType="hashmap">
+		INSERT INTO SC_ORDERHEAD(ID,ORDERNOHEAD,BILLDATE,SENDERNO,SENDERNAME,SENDTEL,FAX,GUESTNO,
+		GUESTNAME,RECEIVEMAN,RECEIVETEL,SUPPLIERNO,SUPPLIERNAME,GROPID,CORPID,MAKER,MAKEDATE,EDITOR,
+		EDITDATE,APPROVER,APPROVEDATE,STATUS,MEMO,SFILENAME,SUBJECT,SYSORDERNO,REJECTMEMO,REJECTDATE,
+		RECEIVEDATE,DRIVERRECEIVEDATE,TRUCKNO,TRUCKTYPE,DRIVERNAME,TEL,IDCARD,CONTROLDATE,PICKTIME,UPDDATE)values(
+				#{id},#{ordernohead},#{billdate},#{senderno},#{sendername},#{sendtel},#{fax},#{guestno},
+				#{guestname},#{receiveman},	#{receivetel},#{supplierno},#{suppliername},#{gropid},#{corpid},#{maker},#{makedate},#{editor},
+				#{editdate},#{approver},#{approvedate},#{status},#{memo},#{sfilename},#{subject},#{sysorderno},#{rejectmemo},#{rejectdate},
+				#{receivedate},	#{driverreceivedate},#{truckno},#{trucktype},#{drivername},#{tel},#{idcard},#{controldate},#{picktime},#{upddate}
+			)
+	</insert>
+	
+	<insert id="insert_ORDERDETAIL_BAK" parameterType="hashmap">
+		INSERT INTO SC_ORDERHEAD_BAK(ID,ORDERNOHEAD,BILLDATE,SENDERNO,SENDERNAME,SENDTEL,FAX,GUESTNO,
+		GUESTNAME,RECEIVEMAN,RECEIVETEL,SUPPLIERNO,SUPPLIERNAME,GROPID,CORPID,MAKER,MAKEDATE,EDITOR,
+		EDITDATE,APPROVER,APPROVEDATE,STATUS,MEMO,SFILENAME,SUBJECT,SYSORDERNO,REJECTMEMO,REJECTDATE,
+		RECEIVEDATE,DRIVERRECEIVEDATE,TRUCKNO,TRUCKTYPE,DRIVERNAME,TEL,IDCARD,CONTROLDATE,PICKTIME,UPDDATE,CHGTYPE)
+		values(
+				#{id},#{ordernohead},#{billdate},#{senderno},#{sendername},	#{sendtel},	#{fax},#{guestno},
+				#{guestname},#{receiveman},#{receivetel},#{supplierno},	#{suppliername},#{gropid},#{corpid},#{maker},#{makedate},#{editor},
+				#{editdate},#{approver},#{approvedate},	#{status},#{memo},#{sfilename},#{subject},#{sysorderno},#{rejectmemo},#{rejectdate},
+				#{receivedate},	#{driverreceivedate},#{truckno},#{trucktype},#{drivername},#{tel},#{idcard},#{controldate},#{picktime},#{upddate},
+				#{chgtype}
+			)
+	</insert>
+	
+	<delete id="delOrderheadBAK" parameterType="hashmap">
+		delete 
+			from SC_ORDERHEAD_BAK
+			where ID = #{id }
+	</delete>
+	
+	<delete id="delOrderhead" parameterType="hashmap">
+		delete 
+			from SC_ORDERHEAD
+			where ID = #{id }
+	</delete>
+	
+	<select id="selectOrderheadById" parameterType="hashmap" resultType="Orderhead">
+		SELECT 
+			*
+		FROM sc_orderhead 
+		where id = #{id }
+	</select>
+	
+	<select id="selectOrderheadBAKById" parameterType="hashmap" resultType="Orderhead">
+		SELECT 
+			ID,ORDERNOHEAD,BILLDATE,SENDERNO,SENDERNAME,SENDTEL,FAX,GUESTNO,
+		GUESTNAME,RECEIVEMAN,RECEIVETEL,SUPPLIERNO,SUPPLIERNAME,GROPID,CORPID,MAKER,MAKEDATE,EDITOR,
+		EDITDATE,APPROVER,APPROVEDATE,STATUS,MEMO,SFILENAME,SUBJECT,SYSORDERNO,REJECTMEMO,REJECTDATE,
+		RECEIVEDATE,DRIVERRECEIVEDATE,TRUCKNO,TRUCKTYPE,DRIVERNAME,TEL,IDCARD,CONTROLDATE,PICKTIME,UPDDATE
+		FROM SC_ORDERHEAD_BAK 
+		where id = #{id }
+	</select>
+	
+	<select id="getOrderheadState" parameterType="hashmap" resultType="String">
+		select GETNOTESTATUS(a.STATUS,c.NAME,a.driverReceiveDate,b.LOADINDATE,b.LOADOUTDATE,b.UNLOADINDATE,b.UNLOADOUTDATE) as noteStatus 
+		from 
+			SC_ORDERHEAD a 
+		left join 
+			(select id,loadingNote,max(loadInDate) as loadInDate,max(unLoadInDate) as unLoadInDate,max(loadOutDate) as loadOutDate,max(unloadOutDate) as unloadOutDate 
+			from SC_ORDERDETAIL group by id,loadingNote) b on a.id=b.id  
+		left join 
+			cp_orderStatus c on a.status=c.ID 
+		where 
+			b.loadingNote=#{loadingNote }
+	</select>
+	
+	<update id="updateOrderhead" parameterType="Orderhead">
+		update 
+			SC_ORDERHEAD
+		<set>
+			<if test="null != truckno">
+				TRUCKNO=#{truckno},
+			</if>
+			<if test="null != trucktype">
+				TRUCKTYPE=#{trucktype},
+			</if>
+			<if test="null != drivername">
+				DRIVERNAME=#{drivername},
+			</if>
+			<if test="null != tel">
+				TEL=#{tel},
+			</if>
+			<if test="null != idcard">
+				IDCARD=#{idcard},
+			</if>
+			<if test="null != status">
+				STATUS=#{status},
+			</if>
+			<if test="null == driverreceivedate">
+				DRIVERRECEIVEDATE = null,
+			</if>
+			<if test="null != receivedate">
+				RECEIVEDATE=#{receivedate},
+			</if>
+			<if test="null != controldate">
+				CONTROLDATE=#{controldate},
+			</if>
+		</set>	
+			where ID = #{id }
+	</update>
+	
+	<select id="searchOrderheadByState_size" parameterType="hashmap" resultType="int">
+		select count(*) 
+		from (
+			select count(*)
+			FROM SC_ORDERHEAD so
+		    LEFT JOIN 
+				SC_ORDERDETAIL sod 
+			ON 
+			so.id = sod.id  
+	        <where>
+			(nvl(so.isHide,0)=0)
+			<if test="supplierno!=null and supplierno!=''">
+				and so.supplierno = #{supplierno}
+			</if>
+			
+			<if test="sendername!=null and sendername!=''">
+				and so.SENDERNO = #{sendername}
+			</if>
+			
+			<if test="guestno!=null and guestno!=''">
+				and so.guestno = #{guestno}
+			</if>
+			<if test="stauts == 1 || stauts == 3">
+				and so.status = #{stauts}
+			</if>
+			<if test="stauts == 10">
+				and sod.unloadOutDate is NOT NULL
+			</if>
+			<if test="stauts == 2">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and so.driverreceivedate is NULL
+			</if>
+			<if test="stauts == 4">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and so.status = 4
+				and so.driverreceivedate is NOT NULL
+				and sod.loadindate is null
+			</if>
+			<if test="stauts == 5">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and sod.loadindate is NOT NULL
+				and sod.loadoutdate is null
+			</if>
+			<if test="stauts == 6">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and sod.loadoutdate is NOT NULL
+				and sod.unloadindate is NULL
+			</if>
+			<if test="stauts == 7">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and sod.unloadindate is NOT NULL
+				and sod.unloadoutdate is NULL
+			</if>
+		</where>
+		group by sod.loadingNote
+		)
+	</select>
+	
+	<select id="searchOrderheadByState_size_v2" parameterType="hashmap" resultType="int">
+		select count(*) 
+		from (
+			select count(*)
+			FROM SC_ORDERHEAD so
+		    LEFT JOIN SC_ORDERDETAIL sod ON so.id = sod.id  
+			LEFT JOIN CP_DCINFO cd ON so.guestno = cd.code
+	        <where>
+			(nvl(so.isHide,0)=0)
+			<if test="area!=null and area!=''">
+				and cd.area = #{area}
+			</if>
+			<if test="beginshipDate!=null and beginshipDate!=''">
+				and sod.shipdate &gt;= #{beginshipDate}
+			</if>
+			<if test="endshipDate!=null and endshipDate!=''">
+				and sod.shipdate &lt;= #{endshipDate}
+			</if>
+			<if test="waybillCode!=null and waybillCode!=''">
+				and sod.loadingnote = #{waybillCode}
+			</if>
+								
+			<if test="sourceno!=null and sourceno!=''">
+				and sod.sourceno = #{sourceno}
+			</if>
+
+			<if test="transportationNo!=null and transportationNo!=''">
+				and sod.transportationno = #{transportationNo}
+			</if>
+			
+			<if test="supplierno!=null and supplierno!=''">
+				and so.supplierno = #{supplierno}
+			</if>
+			
+			<if test="sendername!=null and sendername!=''">
+				and so.SENDERNO = #{sendername}
+			</if>
+			
+			<if test="guestno!=null and guestno!=''">
+				and so.guestno = #{guestno}
+			</if>
+			<if test="stauts == 1 || stauts == 3">
+				and so.status = #{stauts}
+			</if>
+			<if test="stauts == 10">
+				and sod.unloadOutDate is NOT NULL
+			</if>
+			<if test="stauts == 2">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and so.driverreceivedate is NULL
+			</if>
+			<if test="stauts == 4">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and so.status = 4
+				and so.driverreceivedate is NOT NULL
+				and sod.loadindate is null
+			</if>
+			<if test="stauts == 5">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and sod.loadindate is NOT NULL
+				and sod.loadoutdate is null
+			</if>
+			<if test="stauts == 6">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and sod.loadoutdate is NOT NULL
+				and sod.unloadindate is NULL
+			</if>
+			<if test="stauts == 7">
+				and so.status != 1
+				and so.status != 10
+				and so.status != 3
+				and sod.unloadindate is NOT NULL
+				and sod.unloadoutdate is NULL
+			</if>
+		</where>
+		group by sod.loadingNote
+		)
+	</select>
+	
+	<select id="searchOrderheadByState" parameterType="hashmap" resultMap="OrderheadPojo">
+		SELECT *
+		FROM (SELECT tt.*, ROWNUM AS rowno
+		          FROM (  SELECT  so.ID,so.ORDERNOHEAD,so.BILLDATE,so.SENDERNO,so.SENDERNAME,so.SENDTEL,so.FAX,so.GUESTNO,
+							so.GUESTNAME,so.RECEIVEMAN,so.RECEIVETEL,so.SUPPLIERNO,so.SUPPLIERNAME,so.GROPID,so.CORPID,so.MAKER,so.MAKEDATE,so.EDITOR,
+							so.EDITDATE,so.APPROVER,so.APPROVEDATE,so.STATUS,so.MEMO,so.SFILENAME,so.SUBJECT,so.SYSORDERNO,so.REJECTMEMO,so.REJECTDATE,
+							so.RECEIVEDATE,so.DRIVERRECEIVEDATE,so.TRUCKNO,so.TRUCKTYPE,so.DRIVERNAME,so.TEL,so.IDCARD,so.CONTROLDATE,so.PICKTIME,so.UPDDATE
+		                    ,sod.shipDate
+		                    FROM SC_ORDERHEAD so
+		                    LEFT JOIN 
+								SC_ORDERDETAIL sod 
+							ON 
+								so.id = sod.id  
+		                   <where>
+								(nvl(so.isHide,0)=0)
+								<if test="supplierno!=null and supplierno!=''">
+									and so.supplierno = #{supplierno}
+								</if>
+								
+								<if test="sendername!=null and sendername!=''">
+									and so.SENDERNO = #{sendername}
+								</if>
+								
+								<if test="guestno!=null and guestno!=''">
+									and so.guestno = #{guestno}
+								</if>
+								<if test="stauts == 1 || stauts == 3">
+									and so.status = #{stauts}
+								</if>
+								<if test="stauts == 10">
+									and sod.unloadOutDate is NOT NULL
+								</if>
+								<if test="stauts == 2">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and so.driverreceivedate is NULL
+								</if>
+								<if test="stauts == 4">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and so.status = 4
+									and so.driverreceivedate is NOT NULL
+									and sod.loadindate is null
+								</if>
+								<if test="stauts == 5">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and sod.loadindate is NOT NULL
+									and sod.loadoutdate is null
+								</if>
+								<if test="stauts == 6">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and sod.loadoutdate is NOT NULL
+									and sod.unloadindate is NULL
+								</if>
+								<if test="stauts == 7">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and sod.unloadindate is NOT NULL
+									and sod.unloadoutdate is NULL
+								</if>
+							</where>
+							group by 
+							so.ID,so.ORDERNOHEAD,so.BILLDATE,so.SENDERNO,so.SENDERNAME,so.SENDTEL,so.FAX,so.GUESTNO,
+							so.GUESTNAME,so.RECEIVEMAN,so.RECEIVETEL,so.SUPPLIERNO,so.SUPPLIERNAME,so.GROPID,so.CORPID,
+							so.MAKER,so.MAKEDATE,so.EDITOR,
+							so.EDITDATE,so.APPROVER,so.APPROVEDATE,so.STATUS,so.MEMO,so.SFILENAME,so.SUBJECT,so.SYSORDERNO,
+							so.REJECTMEMO,so.REJECTDATE,
+							so.RECEIVEDATE,so.DRIVERRECEIVEDATE,so.TRUCKNO,so.TRUCKTYPE,so.DRIVERNAME,so.TEL,so.IDCARD,
+							so.CONTROLDATE,so.PICKTIME,so.UPDDATE,sod.shipDate
+							<if test="stauts == 1 || stauts == 2 || stauts == 3">
+								order by sod.shipDate asc,so.id asc
+							</if>
+							<if test="stauts == 4 || stauts == 5 || stauts == 6 || stauts == 7 || stauts == 10">
+								order by sod.shipDate desc,so.id asc
+							</if>
+		                ) tt
+		         WHERE ROWNUM &lt;= #{onset }
+		         ) table_alias
+		 WHERE table_alias.rowno &gt;= #{offset }
+	</select>
+	
+	<select id="searchOrderhead_anomalyByState_size_3" parameterType="hashmap" resultType="int">
+		select count(*) 
+		from sc_appsubmit_max 
+		where tel in (
+			select distinct a.tel 
+			from sc_orderHead a 
+			left join sc_orderDetail b 
+			on a.id=b.id 
+			where a.driverReceivedate is not null 
+			and b.UNLOADOUTDATE is null 
+			and b.LOADOUTDATE is not null 
+			and b.UNLOADINDATE is null 
+			and nvl(a.isHide,0)=0
+			<if test="supplierno!=null and supplierno!=''">
+				and a.supplierno = #{supplierno}
+			</if>
+			
+			<if test="sendername!=null and sendername!=''">
+				and a.SENDERNO = #{sendername}
+			</if>
+			<if test="guestno!=null and guestno!=''">
+				and a.guestno = #{guestno}
+			</if>
+			) 
+		and round((sysdate-makeDate)*24*60,0)&gt;30
+	</select>
+	
+	<select id="searchOrderhead_anomalyByState_size_3_v2" parameterType="hashmap" resultType="int">
+		select count(*) 
+		from sc_appsubmit_max 
+		where tel in (
+			select distinct so.tel 
+			FROM SC_ORDERHEAD so
+			LEFT JOIN SC_ORDERDETAIL sod ON so.id = sod.id  
+			LEFT JOIN CP_DCINFO cd ON so.guestno = cd.code
+			where so.driverReceivedate is not null 
+			and sod.UNLOADOUTDATE is null 
+			and sod.LOADOUTDATE is not null 
+			and sod.UNLOADINDATE is null 
+			and nvl(so.isHide,0)=0
+			<if test="area!=null and area!=''">
+				and cd.area = #{area}
+			</if>
+			<if test="beginshipDate!=null and beginshipDate!=''">
+				and sod.shipdate &gt;= #{beginshipDate}
+			</if>
+			<if test="endshipDate!=null and endshipDate!=''">
+				and sod.shipdate &lt;= #{endshipDate}
+			</if>
+			<if test="waybillCode!=null and waybillCode!=''">
+				and sod.loadingnote = #{waybillCode}
+			</if>
+			<if test="sourceno!=null and sourceno!=''">
+				and sod.sourceno = #{sourceno}
+			</if>
+			<if test="transportationNo!=null and transportationNo!=''">
+				and sod.transportationno = #{transportationNo}
+			</if>
+			<if test="supplierno!=null and supplierno!=''">
+				and so.supplierno = #{supplierno}
+			</if>
+			
+			<if test="sendername!=null and sendername!=''">
+				and so.SENDERNO = #{sendername}
+			</if>
+			<if test="guestno!=null and guestno!=''">
+				and so.guestno = #{guestno}
+			</if>
+			) 
+		and round((sysdate-makeDate)*24*60,0)&gt;30
+	</select>
+	
+	<select id="searchOrderhead_anomalyByState_size" parameterType="hashmap" resultType="int">
+		select count(*) 
+		from (
+			select count(*)
+			FROM SC_ORDERHEAD so
+		    LEFT JOIN 
+				SC_ORDERDETAIL sod 
+			ON 
+			so.id = sod.id  
+	        <where>
+			(nvl(so.isHide,0)=0)
+			<if test="supplierno!=null and supplierno!=''">
+				and so.supplierno = #{supplierno}
+			</if>
+			
+			<if test="sendername!=null and sendername!=''">
+				and so.SENDERNO = #{sendername}
+			</if>
+			<if test="guestno!=null and guestno!=''">
+				and so.guestno = #{guestno}
+			</if>
+			<if test="stauts == 1">
+				and sod.loadindate is NULL
+				and sod.shipdate &lt; #{time}
+			</if>
+			<if test="stauts == 2">
+				and sod.loadoutdate is NULL
+				and sod.loadindate &lt; #{time}
+			</if>
+			<if test="stauts == 3">
+				and so.driverReceivedate is not null
+				and sod.loadoutdate is NOT NULL
+				and sod.unloadindate is NULL
+				and sod.unloadoutdate is NULL
+			</if>
+			<if test="stauts == 4">
+				and sod.unloadoutdate is NULL
+				and sod.unloadindate &lt; #{time}
+			</if>
+		</where>
+		group by sod.loadingNote
+		)
+	</select>
+	
+	<select id="searchOrderhead_anomalyByState_size_v2" parameterType="hashmap" resultType="int">
+		select count(*) 
+		from (
+			select count(*)
+			FROM SC_ORDERHEAD so
+			LEFT JOIN SC_ORDERDETAIL sod ON so.id = sod.id  
+			LEFT JOIN CP_DCINFO cd ON so.guestno = cd.code
+	        <where>
+			(nvl(so.isHide,0)=0)
+			<if test="area!=null and area!=''">
+					and sod.transportationNo in (
+					select CODE from cp_line where dcNo in 
+					(select CODE from cp_dcinfo where area=#{area})
+			</if>
+			<if test="beginshipDate!=null and beginshipDate!=''">
+				and sod.shipdate &gt;= #{beginshipDate}
+			</if>
+			<if test="endshipDate!=null and endshipDate!=''">
+				and sod.shipdate &lt;= #{endshipDate}
+			</if>
+			<if test="waybillCode!=null and waybillCode!=''">
+				and sod.loadingnote = #{waybillCode}
+			</if>
+			<if test="sourceno!=null and sourceno!=''">
+				and sod.sourceno = #{sourceno}
+			</if>
+			<if test="transportationNo!=null and transportationNo!=''">
+				and sod.transportationno = #{transportationNo}
+			</if>
+			<if test="supplierno!=null and supplierno!=''">
+				and so.supplierno = #{supplierno}
+			</if>
+			
+			<if test="sendername!=null and sendername!=''">
+				and so.SENDERNO = #{sendername}
+			</if>
+			<if test="guestno!=null and guestno!=''">
+				and so.guestno = #{guestno}
+			</if>
+			<if test="stauts == 1">
+				and sod.loadindate is NULL
+				and sod.shipdate &lt; #{time}
+			</if>
+			<if test="stauts == 2">
+				and sod.loadoutdate is NULL
+				and sod.loadindate &lt; #{time}
+			</if>
+			<if test="stauts == 3">
+				and so.driverReceivedate is not null
+				and sod.loadoutdate is NOT NULL
+				and sod.unloadindate is NULL
+				and sod.unloadoutdate is NULL
+			</if>
+			<if test="stauts == 4">
+				and sod.unloadoutdate is NULL
+				and sod.unloadindate &lt; #{time}
+			</if>
+		</where>
+		group by sod.loadingNote
+		)
+	</select>
+	
+	
+	<select id="searchOrderhead_anomalyByState" parameterType="hashmap" resultType="Orderhead">
+		SELECT *
+		FROM (SELECT tt.*, ROWNUM AS rowno
+		          FROM (  SELECT 
+							so.ID,so.ORDERNOHEAD,so.BILLDATE,so.SENDERNO,so.SENDERNAME,so.SENDTEL,so.FAX,so.GUESTNO,
+							so.GUESTNAME,so.RECEIVEMAN,so.RECEIVETEL,so.SUPPLIERNO,so.SUPPLIERNAME,so.GROPID,so.CORPID,
+							so.MAKER,so.MAKEDATE, so.EDITOR,
+							so.EDITDATE,so.APPROVER,so.APPROVEDATE,so.STATUS,so.MEMO,so.SFILENAME,so.SUBJECT,so.SYSORDERNO,
+							so.REJECTMEMO,so.REJECTDATE,
+							so.RECEIVEDATE,so.DRIVERRECEIVEDATE,so.TRUCKNO,so.TRUCKTYPE,so.DRIVERNAME,so.TEL,so.IDCARD,
+							so.CONTROLDATE,so.PICKTIME,so.UPDDATE,sod.shipDate,sod.loadindate,sod.unloadindate,sam.MAKEDATE as makedate_max,
+							expDay(unloadInDate,unloadOutDate) as outExpDay, expDay(loadInDate,loadOutDate) as inExpDay
+		                    FROM SC_ORDERHEAD so
+		                    LEFT JOIN 
+								SC_ORDERDETAIL sod 
+							ON 
+								so.id = sod.id 
+							LEFT JOIN
+								sc_appsubmit_max sam
+							ON
+								 so.TEL = sam.TEL
+		                   <where>
+								(nvl(so.isHide,0)=0)
+								<if test="supplierno!=null and supplierno!=''">
+									and so.supplierno = #{supplierno}
+								</if>
+								
+								<if test="sendername!=null and sendername!=''">
+									and so.SENDERNO = #{sendername}
+								</if>
+								<if test="guestno!=null and guestno!=''">
+									and so.guestno = #{guestno}
+								</if>
+								<if test="stauts == 1">
+									and sod.loadindate is NULL
+									and sod.shipdate &lt; #{time}
+								</if>
+								<if test="stauts == 2">
+									and sod.loadoutdate is NULL
+									and sod.loadindate+1 &lt; #{time}
+								</if>
+								<if test="stauts == 3">
+									and so.driverReceivedate is not null
+									and sod.loadoutdate is NOT NULL
+									and sod.unloadindate is NULL
+									and sod.unloadoutdate is NULL
+									and round((sysdate-makeDate)*24*60,0)&gt;30
+								</if>
+								<if test="stauts == 4">
+									and sod.unloadoutdate is NULL
+									and sod.unloadindate &lt; #{time}
+								</if>
+							</where>
+							group by 
+							so.ID,so.ORDERNOHEAD,so.BILLDATE,so.SENDERNO,so.SENDERNAME,so.SENDTEL,so.FAX,so.GUESTNO,
+							so.GUESTNAME,so.RECEIVEMAN,so.RECEIVETEL,so.SUPPLIERNO,so.SUPPLIERNAME,so.GROPID,so.CORPID,
+							so.MAKER,so.MAKEDATE,so.EDITOR,
+							so.EDITDATE,so.APPROVER,so.APPROVEDATE,so.STATUS,so.MEMO,so.SFILENAME,so.SUBJECT,so.SYSORDERNO,
+							so.REJECTMEMO,so.REJECTDATE,
+							so.RECEIVEDATE,so.DRIVERRECEIVEDATE,so.TRUCKNO,so.TRUCKTYPE,so.DRIVERNAME,so.TEL,so.IDCARD,
+							so.CONTROLDATE,so.PICKTIME,so.UPDDATE,sod.shipDate,sod.loadindate,sod.unloadindate, sam.MAKEDATE,
+							expDay(unloadInDate,unloadOutDate),expDay(loadInDate,loadOutDate)
+							<if test="stauts == 1">
+								order by sod.shipDate desc,so.id asc
+							</if>
+							<if test="stauts == 2">
+								order by expDay(loadInDate,loadOutDate),so.id asc
+							</if>
+							<if test="stauts == 3">
+								order by sam.MAKEDATE asc
+							</if>
+							<if test="stauts == 4">
+								order by expDay(unloadInDate,unloadOutDate) desc, so.id asc
+							</if>
+							
+		                ) tt
+		         WHERE ROWNUM &lt;= #{onset }) table_alias
+		 WHERE table_alias.rowno &gt;= #{offset }
+	</select>
+	  
+	<select id="searchwaybillCode" parameterType="hashmap" resultMap="OrderheadPojo">
+		SELECT *
+		FROM (SELECT tt.*, ROWNUM AS rowno
+		          FROM (  SELECT
+		          			so.loadingnote2,so.ID,so.ORDERNOHEAD,so.BILLDATE,so.SENDERNO,so.SENDERNAME,so.SENDTEL,so.FAX,so.GUESTNO,
+							so.GUESTNAME,so.RECEIVEMAN,so.RECEIVETEL,so.SUPPLIERNO,so.SUPPLIERNAME,so.GROPID,so.CORPID,
+							so.MAKER,so.MAKEDATE, so.EDITOR,
+							so.EDITDATE,so.APPROVER,so.APPROVEDATE,so.STATUS,so.MEMO,so.SFILENAME,so.SUBJECT,so.SYSORDERNO,
+							so.REJECTMEMO,so.REJECTDATE,so.transportation2,
+							so.RECEIVEDATE,so.DRIVERRECEIVEDATE,so.TRUCKNO,so.TRUCKTYPE,so.DRIVERNAME,so.TEL,so.IDCARD,
+							so.CONTROLDATE,so.PICKTIME,so.UPDDATE,so.shipDate2,so.loadindate2,so.unloadindate2,
+							expDay(so.unloadindate2,so.unloadOutDate2) as outExpDay, expDay(so.loadindate2,so.loadoutdate2) as inExpDay
+							<if test="stauts == 13">
+							,sam.MAKEDATE as makedate_max
+							</if>
+		                    FROM SC_ORDERHEAD so
+		                    <if test="stauts == 13">
+							LEFT JOIN
+								sc_appsubmit_max sam
+							ON
+								 so.TEL = sam.TEL
+							</if>
+		                   <where>
+								(nvl(so.isHide,0)=0)
+								<if test="area!=null and area!=''">
+									and so.area2=#{area}
+								</if>
+								<if test="beginshipDate!=null and beginshipDate!=''">
+									and so.shipdate2 &gt;= #{beginshipDate}
+								</if>
+								<if test="endshipDate!=null and endshipDate!=''">
+									and so.shipdate2 &lt;= #{endshipDate}
+								</if>
+								<if test="waybillCode!=null and waybillCode!=''">
+									and so.loadingnote2 = #{waybillCode}
+								</if>
+								
+								<if test="sourceno!=null and sourceno!=''">
+									and so.sourceno2 = #{sourceno}
+								</if>
+								<if test="supplierno!=null and supplierno!=''">
+									and so.supplierno = #{supplierno}
+								</if>
+								
+								<if test="sendername!=null and sendername!=''">
+									and so.SENDERNO = #{sendername}
+								</if>
+								
+								<if test="guestno!=null and guestno!=''">
+									and so.guestno = #{guestno}
+								</if>
+								<if test="transportationNo!=null and transportationNo!=''">
+									and so.transportationno2 = #{transportationNo}
+								</if>
+								<if test="stauts == 1 || stauts == 3">
+									and so.status = #{stauts}
+								</if>
+								<if test="stauts == 10">
+									and so.unloadOutDate2 is NOT NULL
+								</if>
+								<if test="stauts == 2">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and so.driverreceivedate is NULL
+								</if>
+								<if test="stauts == 4">
+									and so.status = 4
+									and so.driverreceivedate is NOT NULL
+									and so.loadindate2 is null
+								</if>
+								<if test="stauts == 5">
+									and so.status = 4
+									and so.loadindate2 is NOT NULL
+									and so.loadoutdate2 is null
+								</if>
+								<if test="stauts == 6">
+									and so.status = 4
+									and so.loadoutdate2 is NOT NULL
+									and so.unloadindate2 is NULL
+								</if>
+								<if test="stauts == 7">
+									and so.status = 4
+									and so.unloadindate2 is NOT NULL
+									and so.unloadoutdate2 is NULL
+								</if>
+								<if test="stauts == 11">
+									and to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-so.shipDate2>0 
+								    and so.loadInDate2 is null
+								</if>
+								<if test="stauts == 12">
+									and expDay(so.loadindate2,so.loadoutdate2) &gt;0
+								</if>
+								<if test="stauts == 13">
+									and so.driverReceivedate is not null
+									and so.loadoutdate2 is NOT NULL
+									and so.unloadindate2 is NULL
+									and so.unloadoutdate2 is NULL
+									and round((sysdate-sam.MAKEDATE)*24*60,0)&gt;30
+								</if>
+								<if test="stauts == 14">
+									and expDay(so.unloadindate2,so.unloadOutDate2) &gt;0
+								</if>
+							</where>
+							<if test="stauts == 1 || stauts == 2 || stauts == 3">
+								order by so.shipDate2 asc,so.id asc
+							</if>
+							<if test="stauts == 4 || stauts == 5 || stauts == 6 || stauts == 7 || stauts == 10">
+								order by so.shipDate2 desc,so.id asc
+							</if>
+							<if test="stauts == 11">
+								order by so.shipDate2 desc,so.id asc
+							</if>
+							<if test="stauts == 12">
+								order by expDay(so.loadindate2,so.loadoutdate2),so.id asc
+							</if>
+							<if test="stauts == 13">
+								order by sam.MAKEDATE asc
+							</if>
+							<if test="stauts == 14">
+								order by expDay(so.unloadindate2,so.unloadOutDate2) desc, so.id asc
+							</if>
+		                ) tt
+		         WHERE ROWNUM &lt;= #{onset }) table_alias
+		 WHERE table_alias.rowno &gt;= #{offset }
+	</select>
+	
+	<select id="countwaybillCode" parameterType="hashmap" resultType="int">
+	    				SELECT COUNT(*) FROM (	
+	    					SELECT 
+	    					so.ID,so.ORDERNOHEAD,so.BILLDATE,so.SENDERNO,so.SENDERNAME,so.SENDTEL,so.FAX,so.GUESTNO,
+							so.GUESTNAME,so.RECEIVEMAN,so.RECEIVETEL,so.SUPPLIERNO,so.SUPPLIERNAME,so.GROPID,so.CORPID,
+							so.MAKER,so.MAKEDATE,so.EDITOR,
+							so.EDITDATE,so.APPROVER,so.APPROVEDATE,so.STATUS,so.MEMO,so.SFILENAME,so.SUBJECT,so.SYSORDERNO,
+							so.REJECTMEMO,so.REJECTDATE,
+							so.RECEIVEDATE,so.DRIVERRECEIVEDATE,so.TRUCKNO,so.TRUCKTYPE,so.DRIVERNAME,so.TEL,so.IDCARD,
+							so.CONTROLDATE,so.PICKTIME,so.UPDDATE,so.shipDate2
+							FROM SC_ORDERHEAD so
+		                    <if test="stauts == 13">
+							LEFT JOIN
+								sc_appsubmit_max sam
+							ON
+								 so.TEL = sam.TEL
+							</if>
+							<where>
+								(nvl(so.isHide,0)=0)
+								<if test="area!=null and area!=''">
+									and so.area2=#{area}
+								</if>
+								<if test="beginshipDate!=null and beginshipDate!=''">
+									and so.shipdate2 &gt;= #{beginshipDate}
+								</if>
+								<if test="endshipDate!=null and endshipDate!=''">
+									and so.shipdate2 &lt;= #{endshipDate}
+								</if>
+								<if test="waybillCode!=null and waybillCode!=''">
+									and so.loadingnote2 = #{waybillCode}
+								</if>
+								
+								<if test="sourceno!=null and sourceno!=''">
+									and so.sourceno2 = #{sourceno}
+								</if>
+								<if test="supplierno!=null and supplierno!=''">
+									and so.supplierno = #{supplierno}
+								</if>
+								
+								<if test="sendername!=null and sendername!=''">
+									and so.senderno = #{sendername}
+								</if>
+								
+								<if test="guestno!=null and guestno!=''">
+									and so.guestno = #{guestno}
+								</if>
+								<if test="transportationNo!=null and transportationNo!=''">
+									and so.transportationno2 = #{transportationNo}
+								</if>
+								<if test="stauts == 1 || stauts == 3">
+									and so.status = #{stauts}
+								</if>
+								<if test="stauts == 10">
+									and so.status = 10
+								</if>
+								<if test="stauts == 2">
+									and so.status != 1
+									and so.status != 10
+									and so.status != 3
+									and so.driverreceivedate is NULL
+								</if>
+								<if test="stauts == 4">
+									and so.status = 4
+									and so.driverreceivedate is NOT NULL
+									and so.loadindate2 is null
+								</if>
+								<if test="stauts == 5">
+									and so.status = 4
+									and so.loadindate2 is NOT NULL
+									and so.loadoutdate2 is null
+								</if>
+								<if test="stauts == 6">
+									and so.status = 4
+									and so.loadoutdate2 is NOT NULL
+									and so.unloadindate2 is NULL
+								</if>
+								<if test="stauts == 7">
+									and so.status = 4
+									and so.unloadindate2 is NOT NULL
+									and so.unloadoutdate2 is NULL
+								</if>
+								<if test="stauts == 11">
+								    and to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-so.shipDate2>0 
+								    and so.loadInDate2 is null
+								</if>
+								<if test="stauts == 12">
+									and expDay(so.loadindate2,so.loadoutdate2) &gt;0
+								</if>
+								<if test="stauts == 13">
+									and so.driverReceivedate is not null
+									and so.loadoutdate2 is NOT NULL
+									and so.unloadindate2 is NULL
+									and so.unloadoutdate2 is NULL
+									and round((sysdate-sam.MAKEDATE)*24*60,0)&gt;30
+								</if>
+								<if test="stauts == 14">
+									and expDay(so.unloadindate2,so.unloadOutDate2) &gt;0
+								</if>
+							</where>
+							) tt
+	</select>
+	<select id="selectOrderheadByTel" parameterType="hashmap" resultType="Orderhead">
+		SELECT 
+			*
+		FROM sc_orderhead 
+		where TEL = #{tel } AND STATUS in
+		 <foreach item="item" index="index" collection="status" open="(" separator="," close=")">  
+ 		 #{item}  
+ 		</foreach>  
+	</select>
+	
+</mapper>
